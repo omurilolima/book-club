@@ -3,6 +3,10 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
+BOOK_STATUS = ((0, 'Read'), (1, 'Currently Reading'), (
+    2, 'Want to Read'), (3, 'Abandoned'))
+RATING = ((0, 'Very bad'), (1, 'Bad'), (
+    2, 'Ok'), (3, 'Good'), (4, 'Very good'))
 
 
 class Post(models.Model):
@@ -42,3 +46,15 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'Comment {self.body} by {self.name}'
+
+
+class Book(models.Model):
+    name = models.CharField(max_length=80)
+    author = models.CharField(max_length=80)
+    number_of_pages = models.IntegerField()
+    category = models.CharField(max_length=80)
+    about = models.TextField()
+    rating = models.IntegerField(choices=RATING, default=2)
+    data_started_reading = models.DateField()
+    date_finished_reading = models.DateField()
+    isbn = models.IntegerField(unique=True)
