@@ -49,11 +49,11 @@ class Comment(models.Model):
 
 
 class Book(models.Model):
-    title = models.CharField(max_length=80)
+    title = models.CharField(max_length=80 nullable=False)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.CharField(max_length=80)
+    author = models.CharField(max_length=80 nullable=False)
     number_of_pages = models.IntegerField()
-    category = models.CharField(max_length=80)
+    category = models.CharField(max_length=80, unique=True nullable=False)
     about = models.TextField()
     rating = models.IntegerField(choices=RATING, default=2)
     data_started_reading = models.DateField()
