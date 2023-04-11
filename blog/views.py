@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, Book
 from .forms import CommentForm
 
 
@@ -77,3 +77,10 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class BookList(generic.ListView):
+    model = Book
+    queryset = Book.objects.order_by('-created_on')
+    template_name = 'books.html'
+    paginate_by = 6
