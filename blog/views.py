@@ -115,3 +115,12 @@ class AddBook(View):
                     'book_form': book_form
                 }
             )
+
+
+class BookDetail(View):
+
+    def detail_view(request, id):
+        context = {}
+        context["data"] = Book.objects.get(id=id)
+
+        return render(request, 'book_detail.html', context)
