@@ -1,18 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+{% load crispy_forms_tags %}
 <div class="container-fluid">
     <div class="row">
-
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
-            <h2>My books</h2>
-            <!-- <ul>
-                {% for book in object_list %}
-                    <li>{{ book.title }}</li>
-                {% endfor %}
-            </ul> -->
+            <div class="col-4 mt-3 left"> 
+                <h2>My books</h2>
+                    <a href="#" class="btn btn-primary">
+                        Add Book <i class="fas fa-plus-square right"></i>
+                    </a>
+            </div>
+            <div class="col-4 mt-3 left">
+                {% if user.is_authenticated %}
+                <h3>Add a book:</h3>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ book_form | crispy }}
+                    {% csrf_token %}
+                    <br>
+                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

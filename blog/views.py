@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Book
-from .forms import CommentForm
+from .forms import CommentForm, BookForm
 
 
 class PostList(generic.ListView):
@@ -84,3 +84,13 @@ class BookList(generic.ListView):
     queryset = Book.objects.order_by('-created_on')
     template_name = 'books.html'
     paginate_by = 6
+
+    def get(self, request):
+
+        return render(
+                request,
+                'books.html',
+                {
+                    'book_form': BookForm()
+                }
+            )
