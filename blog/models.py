@@ -50,7 +50,6 @@ class Comment(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=80)
-    slug = models.SlugField(max_length=200, unique=True)
     author = models.CharField(max_length=80)
     number_of_pages = models.IntegerField()
     category = models.CharField(max_length=80, unique=True)

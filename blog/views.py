@@ -85,12 +85,33 @@ class BookList(generic.ListView):
     template_name = 'books.html'
     paginate_by = 6
 
-    def get(self, request):
+
+class AddBook(View):
+
+    def get(self, request, *args, **kwargs):
 
         return render(
                 request,
-                'books.html',
+                'add-book.html',
                 {
                     'book_form': BookForm()
+                }
+            )
+
+    def post(self, request):
+
+        book_form = BookForm(data=request.POST)
+
+        if book_form.is_valid():
+            book_form.instance.email = request.user.email
+            book_form.instance.name = request.user.username
+            book_form.save()
+            book_form = BookForm()
+
+        return render(
+                request,
+                'add-book.html',
+                {
+                    'book_form': book_form
                 }
             )
