@@ -121,6 +121,11 @@ class AddBook(View):
 class BookDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        book = get_object_or_404(slug=slug)
+        book = get_object_or_404(Book, slug=slug)
 
-        return render(request, 'book_detail.html', context)
+        return render(
+            request, 
+            'book_detail.html', 
+            {
+            'book': book
+        })

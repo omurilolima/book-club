@@ -11,7 +11,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body">
-                                <a href="#" class="post-link">
+                                <a href="{% url 'book_detail' book.slug %}" class="post-link">
                                     <img src="https://m.media-amazon.com/images/I/51nvbPrIr+L._SY344_BO1,204,203,200_.jpg" class="card-img-top" alt="...">
                                     <h5 class="card-title">{{ book.title }}</h5>
                                 </a>
