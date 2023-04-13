@@ -118,7 +118,7 @@ class AddBook(View):
             )
 
 
-class BookDetail(View):
+class EditBook(View):
 
     def get(self, request, slug, *args, **kwargs):
         book = get_object_or_404(Book, slug=slug)
@@ -126,7 +126,7 @@ class BookDetail(View):
 
         return render(
             request,
-            'book_detail.html',
+            'edit_book.html',
             {
                 'book': book,
                 'book_form': book_form,
@@ -149,7 +149,7 @@ class BookDetail(View):
 
         return render(
             request,
-            'book_detail.html',
+            'edit_book.html',
             {
                 'book_form': book_form
             }
