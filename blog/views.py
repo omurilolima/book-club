@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic.detail import DetailView
 from django.http import HttpResponseRedirect
 from .models import Post, Book
 from .forms import CommentForm, BookForm
@@ -119,8 +120,7 @@ class AddBook(View):
 
 class BookDetail(View):
 
-    def detail_view(request, id):
-        context = {}
-        context["data"] = Book.objects.get(id=id)
+    def get(self, request, slug, *args, **kwargs):
+        book = get_object_or_404(slug=slug)
 
         return render(request, 'book_detail.html', context)
