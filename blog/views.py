@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.views.generic.detail import DetailView
 from django.http import HttpResponseRedirect
 from .models import Post, Book
-from .forms import CommentForm, BookForm
+from .forms import CommentForm, BookForm, EditBookForm
 
 
 class PostList(generic.ListView):
@@ -122,10 +122,20 @@ class BookDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
         book = get_object_or_404(Book, slug=slug)
+        book_form = EditBookForm({
+            "author": book.author,
+            "number_of_pages": book.number_of_pages,
+            "about": book.about,
+            "rating": book.rating,
+            "data_started_reading": book.data_started_reading,
+            "date_finished_reading": book.date_finished_reading,
+        })
 
         return render(
-            request, 
-            'book_detail.html', 
+            request,
+            'book_detail.html',
             {
-            'book': book
-        })
+                'book': book,
+                'book_form': book_form
+            }
+        )

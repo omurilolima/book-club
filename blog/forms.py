@@ -23,3 +23,16 @@ class BookForm(forms.ModelForm):
             'date_finished_reading',
             'isbn',
         )
+
+
+class EditBookForm(forms.ModelForm):
+    class Meta:
+        model = Book
+        fields = (
+            'author',
+            'number_of_pages',
+            'about',
+            'rating',
+            'data_started_reading',
+            'date_finished_reading',
+        )
