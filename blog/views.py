@@ -154,3 +154,17 @@ class EditBook(View):
                 'book_form': book_form
             }
         )
+
+
+class BookDetail(View):
+
+    def get(self, request, slug, *args, **kwargs):
+        book = get_object_or_404(Book, slug=slug)
+
+        return render(
+            request,
+            'book_detail.html',
+            {
+                'book': book,
+            }
+        )

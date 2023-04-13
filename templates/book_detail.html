@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="col-12 mt-3 left">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2>{{ book.title }}</h2>
+                            <img src="https://m.media-amazon.com/images/I/51nvbPrIr+L._SY344_BO1,204,203,200_.jpg"
+                                class="card-img-top" alt="...">
+                            <h5 class="card-title"> by {{ book.author }}</h5>
+                            <p class="card-text text-muted-h6">My rating: {{ book.rating }}/5</p>
+                            <a href="{% url 'edit_book' book.slug %}" class="post-link">
+                                <button type="submit" class="btn btn-primary">Edit</button>
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
