@@ -143,7 +143,7 @@ class EditBook(View):
         if book_form.is_valid():
             print('Print do if')
             book_form.save()
-            return HttpResponseRedirect("/books/"+slug)
+            return HttpResponseRedirect("/book/"+slug)
 
         # add form dictionary to context
 
@@ -168,3 +168,13 @@ class BookDetail(View):
                 'book': book,
             }
         )
+
+
+class BookDelete(View):
+
+    def get(self, request, slug, *args, **kwargs):
+
+        book = get_object_or_404(Book, slug=slug)
+        book.delete()
+
+        return HttpResponseRedirect(reverse('books'))

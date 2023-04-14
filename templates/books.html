@@ -14,11 +14,14 @@
                                 <img src="https://m.media-amazon.com/images/I/51nvbPrIr+L._SY344_BO1,204,203,200_.jpg" class="card-img-top" alt="...">
                                 <h5 class="card-title">{{ book.title }} by {{ book.author }}</h5>
                                 <p class="card-text text-muted-h6">My rating: {{ book.rating }}/5</p>
-                                <a href="{% url 'edit_book' book.slug %}" class="post-link">
-                                    <button type="submit" class="btn btn-primary">Edit</button>
-                                </a>
                                 <a href="{% url 'book_detail' book.slug %}" class="post-link">
-                                    <button type="submit" class="btn btn-primary">View</button>
+                                    <button type="submit" class="btn btn-primary btn-sm">View</button>
+                                </a>
+                                <a href="{% url 'edit_book' book.slug %}" class="post-link">
+                                    <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+                                </a>
+                                <a href="{% url 'book_delete' book.slug %}" class="post-link">
+                                    <button type="submit" class="btn btn-danger btn-sm">DELETE</button>
                                 </a>
                             </div>
                         </div>
