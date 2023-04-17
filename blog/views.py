@@ -96,7 +96,8 @@ class AddBook(View):
                 request,
                 'add-book.html',
                 {
-                    'book_form': BookForm()
+                    'book_form': BookForm(),
+                    'added_now': False,
                 }
             )
 
@@ -114,7 +115,8 @@ class AddBook(View):
                 request,
                 'add-book.html',
                 {
-                    'book_form': book_form
+                    'book_form': book_form,
+                    'added_now': True,
                 }
             )
 
@@ -140,7 +142,7 @@ class EditBook(View):
         book_form = BookForm(request.POST, instance=book)
 
         # save the data from the form and
-        # redirect to detail_view
+        # redirect to book_view
         if book_form.is_valid():
             print('Print do if')
             book_form.save()

@@ -7,6 +7,12 @@
         <div class="col-4 mt-3 off-set-2">
             <div class="card-body">
                 {% if user.is_authenticated %}
+                    {% if added_now %}
+                        <div class="alert alert-success" role="alert" id="msg">
+                            Book added with success!
+                        </div>
+                    {% endif %}
+                
                     <h3>Add a book:</h3>
                 
                     <form method="post" style="margin-top: 1.3em;">
