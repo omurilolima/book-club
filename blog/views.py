@@ -4,6 +4,7 @@ from django.views.generic.detail import DetailView
 from django.http import HttpResponseRedirect
 from .models import Post, Book
 from .forms import CommentForm, BookForm
+from django.contrib import messages
 
 
 class PostList(generic.ListView):
@@ -128,8 +129,8 @@ class EditBook(View):
             request,
             'edit_book.html',
             {
-                'book': book,
                 'book_form': book_form,
+                'edited': False,
             }
         )
 
@@ -143,15 +144,22 @@ class EditBook(View):
         if book_form.is_valid():
             print('Print do if')
             book_form.save()
-            return HttpResponseRedirect("/book/"+slug)
 
-        # add form dictionary to context
+            return render(
+                request,
+                'book_detail.html',
+                {
+                    'book': book,
+                    'edited': True,
+                }
+            )
 
         return render(
             request,
             'edit_book.html',
             {
-                'book_form': book_form
+                'book_form': book_form,
+                'edited': False,
             }
         )
 

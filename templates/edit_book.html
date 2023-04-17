@@ -5,16 +5,18 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-4 mt-3 off-set-2">
-            {% if user.is_authenticated %}
-            <h3>Edit the book: {{ book.title }}</h3>
-        
-            <form method="post" style="margin-top: 1.3em;">
-                {{ book_form | crispy }}
-                {% csrf_token %}
-                <br>
-                <button type="submit" value="Update" class="btn btn-signup btn-lg">Submit</button>
-            </form>
-            {% endif %}
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                    <h3>Edit the book: {{ book.title }}</h3>
+                
+                    <form method="post" style="margin-top: 1.3em;">
+                        {{ book_form | crispy }}
+                        {% csrf_token %}
+                        <br>
+                        <button type="submit" value="Update" class="btn btn-signup btn-lg">Submit</button>
+                    </form>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
