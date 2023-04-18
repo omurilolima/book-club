@@ -17,7 +17,11 @@ body {
     font-weight: 300;
 }
 
-
+.bg {
+    background-color: #f3eae3;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
 
 .light-bg {
     background-color: #fff;
@@ -34,6 +38,13 @@ body {
 .card {
     margin-right: auto;
     padding: 0;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom-right-radius: 0px;
 }
 
 .image-container {

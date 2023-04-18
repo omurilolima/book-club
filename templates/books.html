@@ -2,65 +2,40 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
-<div class="container">
-    <div class="col-12 mb-3">
-        <div class="row">
-            <h2>My books</h2>
+<div class="bg">
+    <div class="container">
+        <h2>My books</h2>
+    </div>
+    <div class="container">
+        <div class="row g-5 justify-content-evenly">
             <!-- We want a for loop inside the tags to iterate through each comment in comments -->
             {% for book in book_list %}
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="{{ book.image_url }}" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ book.title }}</h5>
-                        <p class="card-text">by {{ book.author }}</p>
-                        <p class="card-text text-muted-h6">My rating: {{ book.rating }}/5</p>
-                        <a href="{% url 'book_detail' book.slug %}" class="post-link">
-                            <button type="submit" class="btn btn-primary btn-sm">View</button>
-                        </a>
-                        <a href="{% url 'edit_book' book.slug %}" class="post-link">
-                            <button type="submit" class="btn btn-primary btn-sm">Edit</button>
-                        </a>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#deleteModal">
-                            DELETE
-                        </button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure to
-                                            delete this book?</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-6 col-md-5">
+                                <img src="{{ book.image_url }}" class="card-img img-fluid rounded-start" alt="{{ book.title }}">
+                            </div>
+                            <div class="col-6 col-md-7">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="h-100">
+                                        <h3 class="card-title">By: {{ book.author }}</h3>
+                                        <h2 class="card-title">{{ book.title }}</h2>
+                                        <p class="card-text">{{ book.about }}</p>
+                                        <h4 class="card-text mb-3">My rating: <strong>{{ book.rating }}/5</strong></h4>
                                     </div>
-                                    <div class="modal-body">
-                                        {{ book.title }} by {{ book.author }}
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Cancel</button>
-                                        <a href="{% url 'book_delete' book.slug %}" class="post-link">
-                                            <button type="button" class="btn btn-danger">DELETE</button>
+                                    <div>
+                                        <a href="{% url 'book_detail' book.slug %}" class="post-link">
+                                            <button type="button" class="btn btn-dark">View</button>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-           
             <!-- Our for loop ends here -->
             {% endfor %}
-            </div>
         </div>
     </div>
 </div>
