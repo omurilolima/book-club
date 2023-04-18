@@ -5,8 +5,8 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, 'Draft'), (1, 'Published'))
 BOOK_STATUS = ((0, 'Read'), (1, 'Currently Reading'), (
     2, 'Want to Read'), (3, 'Abandoned'))
-RATING = ((0, 'Very bad'), (1, 'Bad'), (
-    2, 'Ok'), (3, 'Good'), (4, 'Very good'))
+RATING = ((1, 'Very bad'), (2, 'Bad'), (
+    3, 'Ok'), (4, 'Good'), (5, 'Very good'))
 
 
 class Post(models.Model):

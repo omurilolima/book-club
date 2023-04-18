@@ -17,6 +17,8 @@ body {
     font-weight: 300;
 }
 
+
+
 .light-bg {
     background-color: #fff;
 }
@@ -30,8 +32,8 @@ body {
 }
 
 .card {
-    border: none;
-    background-color: transparent;
+    margin-right: auto;
+    padding: 0;
 }
 
 .image-container {

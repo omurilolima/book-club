@@ -2,54 +2,65 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
-<div class="container-fluid">
-    <div class="col-12 mt-3 left">
+<div class="container">
+    <div class="col-12 mb-3">
         <div class="row">
             <h2>My books</h2>
-                <!-- We want a for loop inside the tags to iterate through each comment in comments -->
-                {% for book in book_list %}
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <img src="https://m.media-amazon.com/images/I/51nvbPrIr+L._SY344_BO1,204,203,200_.jpg" class="card-img-top" alt="...">
-                                <h5 class="card-title">{{ book.title }} by {{ book.author }}</h5>
-                                <p class="card-text text-muted-h6">My rating: {{ book.rating }}/5</p>
-                                <a href="{% url 'book_detail' book.slug %}" class="post-link">
-                                    <button type="submit" class="btn btn-primary btn-sm">View</button>
-                                </a>
-                                <a href="{% url 'edit_book' book.slug %}" class="post-link">
-                                    <button type="submit" class="btn btn-primary btn-sm">Edit</button>
-                                </a>
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                    DELETE
-                                </button>
-                                <!-- Modal -->
-                                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure to delete this book?</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                {{ book.title }} by {{ book.author }}
-                                            </div>
-                                            <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                            <a href="{% url 'book_delete' book.slug %}" class="post-link">
-                                                <button type="button" class="btn btn-danger">DELETE</button>
-                                            </a>
-                                        </div>
-                                        </div>
+            <!-- We want a for loop inside the tags to iterate through each comment in comments -->
+            {% for book in book_list %}
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{{ book.image_url }}" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book.title }}</h5>
+                        <p class="card-text">by {{ book.author }}</p>
+                        <p class="card-text text-muted-h6">My rating: {{ book.rating }}/5</p>
+                        <a href="{% url 'book_detail' book.slug %}" class="post-link">
+                            <button type="submit" class="btn btn-primary btn-sm">View</button>
+                        </a>
+                        <a href="{% url 'edit_book' book.slug %}" class="post-link">
+                            <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+                        </a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal">
+                            DELETE
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure to
+                                            delete this book?</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ book.title }} by {{ book.author }}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                        <a href="{% url 'book_delete' book.slug %}" class="post-link">
+                                            <button type="button" class="btn btn-danger">DELETE</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Our for loop ends here -->
-                {% endfor %}
-            </div>            
+                  </div>
+                </div>
+              </div>
+           
+            <!-- Our for loop ends here -->
+            {% endfor %}
+            </div>
         </div>
     </div>
 </div>
