@@ -2,8 +2,12 @@ body {
     background-color: #F9FAFC;
 }
 
+h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+}
+
 .brand {
-    font-family: Lato, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
@@ -45,6 +49,16 @@ body {
     height: 100%;
     object-fit: cover;
     border-bottom-right-radius: 0px;
+}
+
+.card h3 {
+    text-transform: uppercase;
+    color: rgb(177,177,177);
+    font-size: .8rem;
+}
+
+.card h4 {
+    font-size: 1.1rem;
 }
 
 .image-container {
