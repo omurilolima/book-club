@@ -10,67 +10,30 @@
         <div class="row g-5 justify-content-evenly">
             <!-- We want a for loop inside the tags to iterate through each comment in comments -->
             {% for book in book_list %}
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="row g-0">
-                            <div class="col-6 col-md-5">
-                                <img src="{{ book.image_url }}" class="card-img img-fluid rounded-start" alt="{{ book.title }}">
-                            </div>
-                            <div class="col-6 col-md-7">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="h-100">
-                                        <h3 class="card-title">By: {{ book.author }}</h3>
-                                        <h2 class="card-title">{{ book.title }}</h2>
-                                        <p class="card-text">{{ book.about }}</p>
-                                        <h4 class="card-text mb-4">My rating: <strong>{{ book.rating }}/5</strong></h4>
-                                    </div>
-                                    <div>
-                                        
-                                        <a href="{% url 'book_detail' book.slug %}" class="post-link">
-                                            <button type="button" class="btn btn-dark btn-sm">View</button>
-                                        </a>
-                                        
-                                        <a href="{% url 'edit_book' book.slug %}" class="post-link">
-                                            <button type="submit" class="btn btn-primary btn-sm">Edit</button>
-                                        </a>
-                                        
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#deleteModal">
-                                        DELETE
-                                        </button>
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure to
-                                                        delete this book?</h1>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    {{ book.title }} by {{ book.author }}
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Cancel</button>
-                                                    <a href="{% url 'book_delete' book.slug %}" class="post-link">
-                                                        <button type="button" class="btn btn-danger">DELETE</button>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        </div>
-
-                                    </div>
-                                    
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-6 col-md-5">
+                            <img src="{{ book.image_url }}" class="card-img img-fluid rounded-start"
+                                alt="{{ book.title }}">
+                        </div>
+                        <div class="col-6 col-md-7">
+                            <div class="card-body d-flex flex-column">
+                                <div class="h-100">
+                                    <h3 class="card-title">By: {{ book.author }}</h3>
+                                    <h2 class="card-title">{{ book.title }}</h2>
+                                    <p class="card-text mb-4">{{ book.about }}</p>
                                 </div>
-                            </div>
+                                <div>
+                                    <a href="{% url 'book_detail' book.slug %}" class="post-link">
+                                        <button type="button" class="btn btn-dark btn-sm">View details</button>
+                                    </a>
+                                </div>
+                        </div> 
                         </div>
                     </div>
                 </div>
+            </div>
             <!-- Our for loop ends here -->
             {% endfor %}
         </div>
