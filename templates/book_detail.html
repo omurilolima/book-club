@@ -1,7 +1,53 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container-fluid">
+
+<div class="bg">
+    <div class="container">
+        <div class="row g-5 justify-content-evenly">
+
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-6 col-md-5">
+                            <img src="{{ book.image_url }}" class="card-img img-fluid rounded-start" alt="{{ book.title }}">
+                        </div>
+                        <div class="col-6 col-md-7">
+                            <div class="card-body d-flex flex-column">
+                                <div class="h-100">
+                                    <h3 class="card-title">By: {{ book.author }}</h3>
+                                    <h2 class="card-title">{{ book.title }}</h2>
+                                    <p class="card-text">{{ book.about }}</p>
+                                    <h3 class="card-title mb-4">Category: {{ book.category }} - isbn: {{ book.isbn }}</h3>
+                                    <p class="card-text">Started reading: <strong>{{ book.data_started_reading }}</strong></p>
+                                    <p class="card-text">Started reading: <strong>{{ book.date_finished_reading }}</strong></p>
+                                    <h4 class="card-text mb-4">My rating: <strong><span id="rating">{{ book.rating }}</span></strong></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    
+        </div>
+    </div>
+    <script>
+        function displayStars(){
+            rating = document.getElementById('rating').innerHTML  
+            let stars = [];
+            for (let i = 0; i < rating; i++){
+                stars.push("\u2B50");
+            }
+            document.getElementById("rating").innerText = stars.join(" ");
+        };
+    
+    displayStars()
+    </script>
+</div>
+{%endblock%}
+
+<!-- <div class="container-fluid">
     <div class="col-12 mt-3 left">
         <div class="row">
             <div class="col-md-4">
@@ -24,6 +70,4 @@
             </div>
         </div>
     </div>
-</div>
-
-{%endblock%}
+</div> -->
