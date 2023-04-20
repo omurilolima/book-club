@@ -61,6 +61,8 @@ class Book(models.Model):
     date_finished_reading = models.DateField()
     isbn = models.IntegerField(unique=True)
     created_on = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ['-created_on']

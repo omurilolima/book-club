@@ -82,10 +82,14 @@ class PostLike(View):
 
 
 class BookList(generic.ListView):
+
     model = Book
     queryset = Book.objects.order_by('-created_on')
     template_name = 'books.html'
     paginate_by = 6
+
+    def get_queryset(self):
+        return Book.objects.filter(user=self.request.user)
 
 
 class AddBook(View):

@@ -34,6 +34,14 @@
                     </div>
                 </div>
             </div>
+            {% empty %}
+            <div class="row mt-5">
+                <div class="col-12">
+                    <p class="fs-5">You have no books yet.</p>
+                    <a href="{% url 'add-book' %}">
+                        <button type="button" class="btn btn-signup">Add a book</button>
+                    </a>
+                </div>
             <!-- Our for loop ends here -->
             {% endfor %}
         </div>

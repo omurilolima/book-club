@@ -2,16 +2,16 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row justify-content-center">
+<div class="container">
+    <div class="row justify-content-evenly">
         <!-- Blog Entries Column -->
-        <div class="col-8 mt-3 d-flex justify-content-evenly">
+        <div class="col-12 mt-3 d-flex justify-content-evenly">
             <div class="row">
             {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="image-container">
+                            <div class="image-container mb-3">
                                 {% if 'placeholder' in post.featured_image.url %}
                                 <!-- CHANGE IMAGE LATER -->
                                 <img  class="card-img-top" 
