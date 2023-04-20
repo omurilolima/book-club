@@ -57,9 +57,8 @@ class Book(models.Model):
     category = models.CharField(max_length=80, unique=True)
     about = models.TextField()
     rating = models.IntegerField(choices=RATING, default=2)
-    data_started_reading = models.DateField()
-    date_finished_reading = models.DateField()
-    isbn = models.IntegerField(unique=True)
+    data_started_reading = models.DateField(blank=True)
+    date_finished_reading = models.DateField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(
         User, on_delete=models.CASCADE)

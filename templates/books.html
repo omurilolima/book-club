@@ -2,49 +2,48 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
-<div class="bg">
-    <div class="container">
-        <h2>My books</h2>
-    </div>
-    <div class="container">
-        <div class="row g-5 justify-content-evenly">
-            <!-- We want a for loop inside the tags to iterate through each comment in comments -->
-            {% for book in book_list %}
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="row g-0">
-                        <div class="col-6 col-md-5">
-                            <img src="{{ book.image_url }}" class="card-img img-fluid rounded-start"
-                                alt="{{ book.title }}">
-                        </div>
-                        <div class="col-6 col-md-7">
-                            <div class="card-body d-flex flex-column">
-                                <div class="h-100">
-                                    <h3 class="card-title">By: {{ book.author }}</h3>
-                                    <h2 class="card-title">{{ book.title }}</h2>
-                                    <p class="card-text mb-4">{{ book.about }}</p>
-                                </div>
-                                <div>
-                                    <a href="{% url 'book_detail' book.slug %}" class="post-link">
-                                        <button type="button" class="btn btn-dark btn-sm">View details</button>
-                                    </a>
-                                </div>
-                        </div> 
-                        </div>
+
+<div class="container mt-3">
+    <h2>My books</h2>
+</div>
+<div class="container">
+    <div class="row g-5 justify-content-evenly">
+        <!-- We want a for loop inside the tags to iterate through each comment in comments -->
+        {% for book in book_list %}
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-6 col-md-5">
+                        <img src="{{ book.image_url }}" class="card-img img-fluid rounded-start"
+                            alt="{{ book.title }}">
+                    </div>
+                    <div class="col-6 col-md-7">
+                        <div class="card-body d-flex flex-column">
+                            <div class="h-100">
+                                <h3 class="card-title">By: {{ book.author }}</h3>
+                                <h2 class="card-title">{{ book.title }}</h2>
+                                <p class="card-text mb-4">{{ book.about }}</p>
+                            </div>
+                            <div>
+                                <a href="{% url 'book_detail' book.slug %}" class="post-link">
+                                    <button type="button" class="btn btn-dark btn-sm">View details</button>
+                                </a>
+                            </div>
+                    </div> 
                     </div>
                 </div>
             </div>
-            {% empty %}
-            <div class="row mt-5">
-                <div class="col-12">
-                    <p class="fs-5">You have no books yet.</p>
-                    <a href="{% url 'add-book' %}">
-                        <button type="button" class="btn btn-signup">Add a book</button>
-                    </a>
-                </div>
-            <!-- Our for loop ends here -->
-            {% endfor %}
         </div>
+        {% empty %}
+        <div class="row mt-5">
+            <div class="col-12">
+                <p class="fs-5">You have no books yet.</p>
+                <a href="{% url 'add-book' %}">
+                    <button type="button" class="btn btn-signup">Add a book</button>
+                </a>
+            </div>
+        <!-- Our for loop ends here -->
+        {% endfor %}
     </div>
 </div>
 

@@ -22,5 +22,4 @@ class BookForm(forms.ModelForm):
             'rating',
             'data_started_reading',
             'date_finished_reading',
-            'isbn',
         )

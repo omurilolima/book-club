@@ -66,10 +66,11 @@
     <div class="row justify-content-evenly ms-4 mb-4">
         <div class="col-md-7 card">
             <div class="card-body">
+                {% if user.is_authenticated %}
                 <h3>Comments:</h3>
                 <!-- We want a for loop inside the tags to iterate through each comment in comments -->
                 {% for comment in comments %}
-                <div class="comments card" style="padding: 10px;">
+                <div class="comments card mt-2" style="padding: 10px;">
                     <p class="font-weight-bold">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                         <strong>{{ comment.name }}</strong> at
@@ -83,24 +84,36 @@
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
+                {% else %}
+                <h3>Comments:</h3>
+                <p class="fs-5">To see the comments and leave a comment, please log in or create an account.</p>
+                <a href="{% url 'account_login' %}">
+                    <button type="button" class="btn btn-signup btn-sm">Login</button>
+                </a>
+
+                <a href="{% url 'account_signup' %}">
+                    <button type="button" class="btn btn-signup btn-sm ms-2">Register</button>
+                </a>
+                {% endif %}
             </div>
         </div>
-        <div class="col-md-4 card">
-            <div class="card-body">
-                {% if commented %}
-                    <div class="alert alert-success" role="alert">
-                        Your comment is awaiting approval
-                    </div>
-                {% else %}
-
                 {% if user.is_authenticated %}
-                    <h3>Leave a comment:</h3>
-                    <p>Posting as: <strong>{{ user.username }}</strong></p>
-                    <form method="post">
-                        {{ comment_form | crispy }}
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-signup mt-2">Submit</button>
-                    </form>
+                <div class="col-md-4 card">
+                    <div class="card-body">
+                        {% if commented %}
+                            <div class="alert alert-success" role="alert">
+                                Your comment is awaiting approval
+                            </div>
+                        {% else %}
+
+                        
+                            <h3>Leave a comment:</h3>
+                            <p>Posting as: <strong>{{ user.username }}</strong></p>
+                            <form method="post">
+                                {{ comment_form | crispy }}
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-signup mt-2">Submit</button>
+                            </form>
                 {% endif %}
                 {% endif %}
             </div>
