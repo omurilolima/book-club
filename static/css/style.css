@@ -27,6 +27,12 @@ h2, h3, h4 {
     padding-bottom: 2rem;
 }
 
+.bg-home {
+    background-color: #534439;
+    height: 18rem;
+    width: 100%;
+}
+
 .light-bg {
     background-color: #fff;
 }
@@ -74,7 +80,7 @@ h2, h3, h4 {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #00B64F;
+    background-color: #534439;
 }
 
 .author {

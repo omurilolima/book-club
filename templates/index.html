@@ -2,69 +2,108 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row justify-content-evenly">
+
         <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 d-flex justify-content-evenly">
+<div class="container-fluid d-flex flex-column">
+    <div class="container-fluid">
+        <div class="bg-home">
             <div class="row">
-            {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container mb-3">
-                                {% if 'placeholder' in post.featured_image.url %}
-                                <!-- CHANGE IMAGE LATER -->
-                                <img  class="card-img-top" 
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
-                                {% else %}
-                                <img src="{{ post.featured_image.url }}" class="card-img-top">
-                                {% endif %}
-                                <div class="image-flash">
-                                   <p class="author">Author: {{ post.author }}</p>
+                <div class="col-12 col-md-12 mt-4 d-flex justify-content-evenly">
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="row g-0">
+                                <div class="col-6 col-md-5">
+                                    <img src="/static/images/woman-reading.png" class="card-img img-fluid rounded-start" 
+                                        alt="{{ book.title }}">
+                                </div>
+                                <div class="col-6 col-md-7">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="h-100">
+                                            <h3 class="card-title">Welcome to the <strong>Book Club</strong>!</h3>
+                                            <h2 class="card-title">Discover new books and manage you reading list</h2>
+                                            <p class="card-text mb-4">Already a member? 
+                                                <a href="{% url 'account_login' %}" class="text-secondary">Sign In</a></p>
+                                        </div>
+                                        <div>
+                                            <a href="{% url 'account_signup' %}">
+                                                <button type="button" class="btn btn-signup btn-sm ms-2">Register</button>
+                                            </a>
+                                        </div>
+                                    </div> 
                                 </div>
                             </div>
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
-                            <hr/>
-                            <p class="card-text text-muted-h6">
-                                {{ post.created_on }} 
-                                <i class="far fa-heart">
-                                    {{ post.number_of_likes }}
-                                </i>
-                            </p>
                         </div>
                     </div>
-                </div>
-            {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-            {% endif %}
-
-            {% endfor %}
+                </div>                
             </div>
         </div>
     </div>
-    <!-- Pagination -->
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li>
-                <a href="?page={{ page_obj.previous_page_number }}" 
-                class="page-link">&laquo; PREV</a>
-            </li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li>
-                <a href="?page={{ page_obj.next_page_number }}"
-                 class="page-link"> NEXT &raquo;</a>
-            </li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+    <div class="container mt-3">
+        <div class="row">
+            <p class="fs-5">Read our blog posts:</p>
+        </div>
+        <div class="row justify-content-evenly">
+            <div class="col-12 d-flex justify-content-evenly">
+                <div class="row">
+                {% for post in post_list %}
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="image-container mb-3">
+                                    {% if 'placeholder' in post.featured_image.url %}
+                                    <!-- CHANGE IMAGE LATER -->
+                                    <img  class="card-img-top" 
+                                        src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                    {% else %}
+                                    <img src="{{ post.featured_image.url }}" class="card-img-top">
+                                    {% endif %}
+                                    <div class="image-flash">
+                                    <p class="author">Author: {{ post.author }}</p>
+                                    </div>
+                                </div>
+                                <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                    <h2 class="card-title">{{ post.title }}</h2>
+                                    <p class="card-text">{{ post.excerpt }}</p>
+                                </a>
+                                <hr/>
+                                <p class="card-text text-muted-h6">
+                                    {{ post.created_on }} 
+                                    <i class="far fa-heart">
+                                        {{ post.number_of_likes }}
+                                    </i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                {% endif %}
+
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- Pagination -->
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li>
+                    <a href="?page={{ page_obj.previous_page_number }}" 
+                    class="page-link">&laquo; PREV</a>
+                </li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li>
+                    <a href="?page={{ page_obj.next_page_number }}"
+                    class="page-link"> NEXT &raquo;</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
 </div>
 
 {%endblock%}
