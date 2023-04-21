@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
 
@@ -11,7 +11,7 @@
                     <div class="card">
                         <div class="row g-0">
                             <div class="col-6 col-md-5">
-                                <img src="/static/images/woman-reading.png" class="card-img img-fluid rounded-start" 
+                                <img src="{% static 'images/woman-reading.png' %}" class="card-img img-fluid rounded-start" 
                                     alt="{{ book.title }}">
                             </div>
                             <div class="col-6 col-md-7">
