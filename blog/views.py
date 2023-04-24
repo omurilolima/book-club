@@ -110,8 +110,7 @@ class AddBook(View):
         book_form = BookForm(data=request.POST)
 
         if book_form.is_valid():
-            book_form.instance.email = request.user.email
-            book_form.instance.name = request.user.username
+            book_form.instance.user = request.user
             book_form.save()
             book_form = BookForm()
 

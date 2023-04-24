@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_summernote',
     'blog',
+    'bootstrap_datepicker_plus',
+    'jquery',
 ]
 
 SITE_ID = 1
@@ -165,3 +167,6 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+DATE_FORMAT = "d/m/Y"
+USE_L10N = False

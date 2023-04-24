@@ -1,11 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django import forms
+from bookclub import settings
+
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 BOOK_STATUS = ((0, 'Read'), (1, 'Currently Reading'), (
     2, 'Want to Read'), (3, 'Abandoned'))
-RATING = ((1, 'Very bad'), (2, 'Bad'), (
+RATING = ((0, 'unread'), (1, 'Very bad'), (2, 'Bad'), (
     3, 'Ok'), (4, 'Good'), (5, 'Very good'))
 
 
@@ -56,9 +59,10 @@ class Book(models.Model):
     number_of_pages = models.IntegerField()
     category = models.CharField(max_length=80, unique=True)
     about = models.TextField()
-    rating = models.IntegerField(choices=RATING, default=2)
-    data_started_reading = models.DateField(blank=True)
-    date_finished_reading = models.DateField(blank=True)
+    status = models.IntegerField(choices=BOOK_STATUS, default=2)
+    rating = models.IntegerField(choices=RATING, default=0)
+    data_started_reading = models.DateTimeField()
+    date_finished_reading = models.DateTimeField()
     created_on = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(
         User, on_delete=models.CASCADE)
