@@ -1,5 +1,5 @@
 # Book Club
-Developer: <a href='' target='_blank'>Murilo Lima</a>
+Developer: <a href='https://www.linkedin.com/in/omurilolima/' target='_blank'>Murilo Lima</a>
 Visit the live site
 
  IMAGE with different screen sizes
@@ -47,7 +47,7 @@ The Book Club is a comprehensive website specialized in books. There, users can 
 - Interact with content about books;
 - Manage their readings.
 
-### UX
+## UX
 - Ideal client
     - English speaking;
     - Has interest about books and reading;
@@ -64,12 +64,28 @@ The Book Club is a comprehensive website specialized in books. There, users can 
 7. As a User, I want to leave a comment on a post.
 8. As a User, I want to create my account so that I can comment, like and add my books.
 9. As a User, I want to add a book to my bookshelf.
-10. As a User, I want to edit the information of my book.
-11. As a User, I want to delete a book of my bookshelf.
+10. As a User, I want to be able to edit my current book information.
+11. I want to delete a book from my bookshelf.
+12. As a returning user, I want to log in to the app to see my current books.
+13. I want to be able to log out of my account
+14. I want to see feedback messages to know that my book was created or edited successfully.
+
+### Site Admin
+
+1. As a Site Admin, I want to create, read, update and delete posts so that I can manage my blog content.
+2. As a Site Admin, I want only the logged-in users to be able to add their books.
+3. As a Site Admin, I want to approve comments on a blog post.
 
 
-- Colour scheme
-- Typography
+### Colour scheme
+I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that would be easily readable and visually appealing to users.
+
+![Colour scheme](/media/mycolor.jpg)
+
+### Typography
+
+![Typography - Poppins font](/media/Poppins%20-%20Google%20Fonts.jpg)
+
 - Website pages
 - Wireframes
 
