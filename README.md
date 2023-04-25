@@ -59,7 +59,7 @@ The second goal is to provide a blog in which registered users can read, like an
 
 ### Strategy
 
-- 
+- This project uses Agile Methodology. A Kanban board in GitHub was created to support development process. A planning session generated 17 user stories within 
 
 ### Ideal client
 - English speaking;
