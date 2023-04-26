@@ -1,5 +1,6 @@
 from . import views
 from django.urls import path
+from .views import handler404, handler500, handler403, handler405
 
 
 urlpatterns = [
@@ -14,3 +15,9 @@ urlpatterns = [
     path('book/<slug:slug>/delete', views.BookDelete.as_view(
         ), name='book_delete')
 ]
+
+
+handler404 = 'blog.views.handler404'
+handler500 = 'blog.views.handler500'
+handler403 = 'blog.views.handler403'
+handler405 = 'blog.views.handler405'
