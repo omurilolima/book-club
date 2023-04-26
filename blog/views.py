@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from .models import Post, Book
 from .forms import CommentForm, BookForm
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class PostList(generic.ListView):
@@ -68,7 +69,7 @@ class PostDetail(View):
         )
 
 
-class PostLike(View):
+class PostLike(LoginRequiredMixin, View):
 
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
