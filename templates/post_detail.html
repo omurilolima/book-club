@@ -1,5 +1,7 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
 
+{% block title %}Book Club | {{ post.title }} {% endblock %}
+{% block content %}
 {% load crispy_forms_tags %}
 
 <div class="container mt-3">
