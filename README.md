@@ -59,7 +59,11 @@ The second goal is to provide a blog in which registered users can read, like an
 
 ### Strategy
 
-- This project uses Agile Methodology. A Kanban board in GitHub was created to support development process. A planning session generated 17 user stories within 
+- This project uses Agile Methodology. A Kanban board in GitHub was created to support development process. A planning session generated 17 User Stories within 5 Epics, each one with their acceptance criterias. The development process was based on iterative incremental philosophy, adopting 1 week sprints with the following goals:
+- Week 1: Basic structure and blog features running with boilerplate design and content.
+- Week 2: CRUD functionalities of Books section running with boilerplate design and content.
+- Week 3: Final version of the design and content + Messages.
+- Week 4: Bugfix, final deploy and documentation.
 
 ### Ideal client
 - English speaking;
