@@ -20,7 +20,7 @@
                                     <p class="card-text">{{ book.about }}</p>
                                     <h3 class="card-title mb-4">Category: {{ book.category }}</h3>
                                     <p class="card-text">Started reading: <strong>{{ book.data_started_reading }}</strong></p>
-                                    <p class="card-text mb-4">Started reading: <strong>{{ book.date_finished_reading }}</strong></p>
+                                    <p class="card-text mb-4">Finished reading: <strong>{{ book.date_finished_reading }}</strong></p>
                                     <h4 class="card-text mb-4">My rating: <strong><span id="rating">{{ book.rating }}</span></strong></h4>
                                     {% if edited %}
                                         <div class="alert alert-success" role="alert" id="msg">
