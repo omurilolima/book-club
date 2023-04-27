@@ -22,9 +22,7 @@ class PostDetail(View):
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('created_on')
         liked = False
-        if request.user.is_authenticated and post.likes.filter(
-            id=self.request.user.id).exists():
-            
+        if request.user.is_authenticated and post.likes.filter(id=self.request.user.id).exists():  # noqa
             liked = True
 
         return render(
@@ -115,16 +113,8 @@ class AddBook(LoginRequiredMixin, View):
         if book_form.is_valid():
             book_form.instance.user = request.user
             book_form.save()
-            book_form = BookForm()
 
-        return render(
-                request,
-                'add-book.html',
-                {
-                    'book_form': book_form,
-                    'added_now': True,
-                }
-            )
+        return HttpResponseRedirect(reverse('books'))
 
 
 class EditBook(LoginRequiredMixin, View):
