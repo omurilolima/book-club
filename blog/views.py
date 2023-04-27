@@ -193,7 +193,7 @@ class BookDetail(LoginRequiredMixin, View):
 class BookDelete(LoginRequiredMixin, View):
     """
     Allows the user to delete a book
-    on the book list page.
+    on the book detail page.
     Success message as user feedback
     """
     def get(self, request, slug, *args, **kwargs):
