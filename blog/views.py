@@ -110,6 +110,7 @@ class AddBook(LoginRequiredMixin, View):
     def post(self, request):
 
         book_form = BookForm(data=request.POST)
+        messages.success(request, 'Book added')
 
         if book_form.is_valid():
             book_form.instance.user = request.user
@@ -185,6 +186,7 @@ class BookDelete(LoginRequiredMixin, View):
 
         book = get_object_or_404(Book, slug=slug)
         book.delete()
+        messages.success(request, 'Book deleted')
 
         return HttpResponseRedirect(reverse('books'))
 
