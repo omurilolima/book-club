@@ -59,11 +59,13 @@ The second goal is to provide a blog in which registered users can read, like an
 
 ### Strategy
 
- This project uses Agile Methodology. A Kanban board in GitHub was created to support development process. A planning session generated 17 User Stories within 5 Epics, each one with their acceptance criterias. The development process was based on iterative incremental philosophy, adopting 1 week sprints with the following goals:
+ This project uses Agile Methodology. A Kanban board in GitHub was created to support development process. A planning session generated 18 User Stories within 5 Epics, each one with their acceptance criterias. The development process was based on iterative incremental philosophy, adopting 1 week sprints with the following goals:
 - <strong>Week 1</strong>: Basic structure and blog features running with boilerplate design and content.
 - <strong>Week 2</strong>: CRUD functionalities of Books section running with boilerplate design and content.
 - <strong>Week 3</strong>: Final version of the design and content + Messages.
 - <strong>Week 4</strong>: Bugfix, final deploy and documentation.
+
+For more information: View the Kanban Board here.
 
 ### Ideal client
 - English speaking;
@@ -71,33 +73,38 @@ The second goal is to provide a blog in which registered users can read, like an
 - Want to create a list of their readinds.
 
 ### User Stories
-Epic: Home page
-1. As a User, I want to see the home page with the purpose of the site.
-2. As a User, I want to view a list of posts so that I can select one to read.
-
-Epic: Post
-3. As a User, I want to read the full content of a post.
-4. As a User, I want to view the number of likes on each post.
-5. As a User, I want to like a post.
-
-Epic: Comments
-6. As a User, I want to view comments on a post.
-7. As a User, I want to leave a comment on a post.
-
-8. As a User, I want to add a book to my bookshelf.
-9. As a User, I want to be able to edit my current book information.
-10. I want to delete a book from my bookshelf.
-
 Epic: Account
-11. As a User, I want to create my account so that I can comment, like and add my books.
-12. As a returning user, I want to log in to the app to see my current books.
-13. I want to be able to log out of my account
-14. I want to see feedback messages to know that my book was created or edited successfully.
+
+1. As a User, I want to create my account so that I can comment, like and add my books.
+2. As a returning user, I want to log in to the app to see my current books.
+3. I want to be able to log out of my account
+4. I want to see feedback messages to know that my book was created or edited successfully.
 
 Epic: Admin
-15. As a Site Admin, I want to create, read, update and delete posts so that I can manage my blog content.
-16. As a Site Admin, I want only the logged-in users to be able to add their books.
-17. As a Site Admin, I want to approve comments on a blog post.
+
+5. As a Site Admin, I want to create, read, update and delete posts so that I can manage my blog content.
+
+Epic: Home page
+6. As a User, I want to see the home page with the purpose of the site.
+7. As a User, I want to view a list of posts so that I can select one to read.
+
+Epic: Post
+
+8. As a User, I want to read the full content of a post.
+9. As a User, I want to view the number of likes on each post.
+10. As a User, I want to like a post.
+
+Epic: Comments
+
+11. As a User, I want to view comments on a post.
+12. As a User, I want to leave a comment on a post.
+
+Epic: Book
+
+13. As a User, I want to add a book to my bookshelf.
+14. As a user, I want to see my books
+15. As a User, I want to be able to edit my current book information.
+16. I want to delete a book from my bookshelf.
 
 
 ### Colour scheme
@@ -112,7 +119,54 @@ I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that wo
 - Website pages
 - Wireframes
 
-### Database
+## Database
+
+### Post model
+| Name | Type | Extra Info |
+| --- | --- | --- |
+| Title (Unique) | CharField | max_length=200, unique=True |
+| Author | ForeignKey |  |
+| Created_on | DateTimeField | auto_now_add=True |
+| Updated date | DateTimeField | auto_now=True |
+| Content | TextField |  |
+| Featured Image | CloudinaryField | default='placeholder’ |
+| Excerpt | TextField | blank=Tru |
+| Likes | Many to many | related_name='blog_likes', blank=True |
+| Slug | SlugField | max_length=200, unique=True |
+| Status | Integer | STATUS = ((0, 'Draft'), (1, 'Published')) |
+
+
+### Comment model
+| Name | Type | Extra Info |
+| --- | --- | --- |
+| post | ForeignKey | Cascade on delete |
+| name | CharField | Max length 80 |
+| email | EmailField |  |
+| body | TextField |  |
+| created_on | DateTimeField | auto_now_add True |
+| approved | BooleanField | default False |
+
+
+### Book model
+| Name | Type | Extra Info |
+| --- | --- | --- |
+| Title | CharField | max_length: 200 |
+| Image_url | CharField | max_length: 200 |
+| Slug | SlugField | max_length=200, unique=True |
+| Author | CharField | max_length=80, unique=True |
+| Status | integer | BOOK_STATUS = ((0, 'Read'), (1, 'Currently Reading'), (
+2, 'Want to Read'), (3, 'Abandoned')) |
+| Number of pages | Integer |  |
+| Category | CharField | max_length: 80 |
+| About | TextField |  |
+| Rating | Integer | RATING = ((0, 'unread'), (1, 'Very bad'), (2, 'Bad'), (
+3, 'Ok'), (4, 'Good'), (5, 'Very good')) |
+| Date started reading | DateTimeField |  |
+| Date finished reading  | DateTimeField | ` |
+| created_on | DateTimeField | auto_now_add True |
+| user | ForeignKey |  |
+
+
 - Technologies Used
 - Features
 - Features to Implement in Future
