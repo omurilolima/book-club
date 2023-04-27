@@ -9,6 +9,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class PostList(generic.ListView):
+    """
+    Displays the latest blog posts on the home page,
+    including filter by approved and order by created_on descending
+    """
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
@@ -16,7 +20,10 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
-
+    """
+    Displays a individual blog post on a single page,
+    including feature to like and add comment.
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -71,6 +78,9 @@ class PostDetail(View):
 
 
 class PostLike(LoginRequiredMixin, View):
+    """
+    View to remove or add like on post detail page
+    """
 
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
@@ -84,18 +94,23 @@ class PostLike(LoginRequiredMixin, View):
 
 
 class BookList(LoginRequiredMixin, generic.ListView):
-
+    """
+    Displays all the books the user created,
+    including order by created_on descending
+    """
     model = Book
     queryset = Book.objects.order_by('-created_on')
     template_name = 'books.html'
-    paginate_by = 6
 
     def get_queryset(self):
         return Book.objects.filter(user=self.request.user)
 
 
 class AddBook(LoginRequiredMixin, View):
-
+    """
+    Allows the user to add a new book.
+    Success message as user feedback.
+    """
     def get(self, request, *args, **kwargs):
 
         return render(
@@ -120,7 +135,11 @@ class AddBook(LoginRequiredMixin, View):
 
 
 class EditBook(LoginRequiredMixin, View):
-
+    """
+    Allows the user to update their books
+    on the book detail page
+    Success message as user feedback
+    """
     def get(self, request, slug, *args, **kwargs):
         book = get_object_or_404(Book, slug=slug)
         book_form = BookForm(instance=book)
@@ -140,22 +159,11 @@ class EditBook(LoginRequiredMixin, View):
         book_form = BookForm(request.POST, instance=book)
         messages.success(request, 'Book edited')
 
-        # save the data from the form and
-        # redirect to book_view
         if book_form.is_valid():
             print('Print do if')
             book_form.save()
 
             return HttpResponseRedirect(reverse('book_detail', args=[slug]))
-
-            # return render(
-            #     request,
-            #     'book_detail.html',
-            #     {
-            #         'book': book,
-            #         'edited': True,
-            #     }
-            # )
 
         return render(
             request,
@@ -167,7 +175,9 @@ class EditBook(LoginRequiredMixin, View):
 
 
 class BookDetail(LoginRequiredMixin, View):
-
+    """
+    Displays a individual book on a single page.
+    """
     def get(self, request, slug, *args, **kwargs):
         book = get_object_or_404(Book, slug=slug)
 
@@ -181,7 +191,11 @@ class BookDetail(LoginRequiredMixin, View):
 
 
 class BookDelete(LoginRequiredMixin, View):
-
+    """
+    Allows the user to delete a book
+    on the book list page.
+    Success message as user feedback
+    """
     def get(self, request, slug, *args, **kwargs):
 
         book = get_object_or_404(Book, slug=slug)
