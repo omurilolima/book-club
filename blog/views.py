@@ -22,7 +22,9 @@ class PostDetail(View):
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('created_on')
         liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
+        if request.user.is_authenticated and post.likes.filter(
+            id=self.request.user.id).exists():
+            
             liked = True
 
         return render(
@@ -93,7 +95,7 @@ class BookList(generic.ListView):
         return Book.objects.filter(user=self.request.user)
 
 
-class AddBook(View):
+class AddBook(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
 
@@ -125,7 +127,7 @@ class AddBook(View):
             )
 
 
-class EditBook(View):
+class EditBook(LoginRequiredMixin, View):
 
     def get(self, request, slug, *args, **kwargs):
         book = get_object_or_404(Book, slug=slug)
@@ -170,7 +172,7 @@ class EditBook(View):
         )
 
 
-class BookDetail(View):
+class BookDetail(LoginRequiredMixin, View):
 
     def get(self, request, slug, *args, **kwargs):
         book = get_object_or_404(Book, slug=slug)
@@ -184,7 +186,7 @@ class BookDetail(View):
         )
 
 
-class BookDelete(View):
+class BookDelete(LoginRequiredMixin, View):
 
     def get(self, request, slug, *args, **kwargs):
 
