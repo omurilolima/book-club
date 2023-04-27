@@ -53,6 +53,7 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+
         else:
             comment_form = CommentForm()
 
@@ -136,6 +137,7 @@ class EditBook(LoginRequiredMixin, View):
 
         book = get_object_or_404(Book, slug=slug)
         book_form = BookForm(request.POST, instance=book)
+        messages.success(request, 'Book edited')
 
         # save the data from the form and
         # redirect to book_view
@@ -143,21 +145,22 @@ class EditBook(LoginRequiredMixin, View):
             print('Print do if')
             book_form.save()
 
-            return render(
-                request,
-                'book_detail.html',
-                {
-                    'book': book,
-                    'edited': True,
-                }
-            )
+            return HttpResponseRedirect(reverse('book_detail', args=[slug]))
+
+            # return render(
+            #     request,
+            #     'book_detail.html',
+            #     {
+            #         'book': book,
+            #         'edited': True,
+            #     }
+            # )
 
         return render(
             request,
             'edit_book.html',
             {
                 'book_form': book_form,
-                'edited': False,
             }
         )
 
