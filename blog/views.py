@@ -82,7 +82,7 @@ class PostLike(LoginRequiredMixin, View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class BookList(generic.ListView):
+class BookList(LoginRequiredMixin, generic.ListView):
 
     model = Book
     queryset = Book.objects.order_by('-created_on')
