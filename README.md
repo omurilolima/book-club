@@ -175,6 +175,21 @@ I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that wo
     - Manual testing of user stories
     - Performing tests on various devices
     - Browser compatibility
+
+## Automatic Testing
+
+### Forms
+
+| Test Label | Test Action | Expected Outcome | Test Outcome | Screenshot |
+| --- | --- | --- | --- | --- |
+| BookForm - Title | Input empty value and click submit | Error message: “This field is required” | PASS |  |
+| BookForm - Slug | Input empty value and click submit | Error message: “This field is required” | PASS |  |
+| BookForm - Category | Input empty value and click submit | Error message: “This field is required” | PASS |  |
+| BookForm - Image_url | Input empty value and click submit | No error message is displayed | PASS |  |
+| BookForm - Fields displayed | Check if the 'title', 'slug', 'image_url',' author', 'number_of_pages', 'category',' about', 'status', 'rating', 'data_started_reading', and 'date_finished_reading', fields are explicit in comment metaclass | Only the listed fields in the test are shown for the user. | PASS |  |
+| CommentForm - Body | Input empty value and click submit | Error message: “This field is required” | PASS |  |
+| BookForm - Field displayed | Check if the body field is explicit in comment metaclass | Only the listed field in the test is shown for the user. | PASS |  |
+
 - Bugs
 - Configuration
     - Forking the GitHub Repository
