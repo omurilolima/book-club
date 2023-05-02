@@ -1,5 +1,8 @@
 from django.test import TestCase
+from django.urls import reverse
+from django.utils.timezone import make_aware
 from .models import Book, User
+import pytz
 
 
 class TestViews(TestCase):
@@ -29,11 +32,15 @@ class TestViews(TestCase):
         user = User.objects.create()
         book = Book.objects.create(
             title='teste',
+            image_url='img',
             slug='teste',
+            author='testador',
             number_of_pages=1,
             category='teste',
-            data_started_reading='1999-01-01 01:01:00',
-            date_finished_reading='1999-01-01 01:01:00',
+            about='bla-bla-bla',
+            rating=1,
+            data_started_reading='2011-10-05T14:48:00.000Z',
+            date_finished_reading='2011-10-05T14:48:00.000Z',
             user=user
             )
         response = self.client.get(f'/book/edit/{book.slug}', follow=True)
@@ -46,17 +53,27 @@ class TestViews(TestCase):
         """
         user = User.objects.create()
         self.client.force_login(user)
-        response = self.client.post('/add-book', {
-            'title': 'teste',
-            'slug': 'teste',
+
+        response = self.client.post('/add-book/', {
+            'title': 'teste123',
+            'image_url': 'img',
+            'slug': 'teste123',
+            'author': 'testador',
             'number_of_pages': 1,
-            'category': 'teste',
-            'data_started_reading': '1999-01-01 01:01:00',
-            'date_finished_reading': '1999-01-01 01:01:00',
-            'user': user,
-        }, follow=True)
-        self.assertRedirects(
-            response, '/add-book/', status_code=301)
+            'category': 'teste123',
+            'about': 'bla-bla-bla',
+            'rating': 1,
+            'status': 1,
+            'data_started_reading':
+                '2011-10-05T14:48:00.000Z',
+            'date_finished_reading':
+                '2011-10-05T14:48:00.000Z',
+        })
+
+        self.assertRedirects(response, reverse('books'), status_code=302)
+
+        existing_book = Book.objects.filter(slug="teste123")
+        self.assertEqual(len(existing_book), 1)
 
     def test_can_delete_book(self):
         """
@@ -69,8 +86,8 @@ class TestViews(TestCase):
             slug='teste',
             number_of_pages=1,
             category='teste',
-            data_started_reading='1999-01-01 01:01:00',
-            date_finished_reading='1999-01-01 01:01:00',
+            data_started_reading='2011-10-05T14:48:00.000Z',
+            date_finished_reading='2011-10-05T14:48:00.000Z',
             user=user
             )
         response = self.client.get(f'/book/{book.slug}/delete', follow=True)

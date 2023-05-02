@@ -123,7 +123,6 @@ class AddBook(LoginRequiredMixin, View):
             )
 
     def post(self, request):
-
         book_form = BookForm(data=request.POST)
         messages.success(request, 'Book added')
 
