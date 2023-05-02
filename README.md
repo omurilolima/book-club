@@ -116,8 +116,30 @@ I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that wo
 
 ![Typography - Poppins font](/media/Poppins%20-%20Google%20Fonts.jpg)
 
-- Website pages
-- Wireframes
+### Website pages
+- Home Page
+
+![Home Page](/media/bookClub_home.png)
+
+- Post
+![Post details](/media/bookClub_postDetail.png)
+
+- My Books
+![My Books](/media/bookClub_Mybooksl.png)
+
+- Book details
+![Book details](/media/bookClub_bookDetail.png)
+
+### Wireframes
+
+- Home Page
+
+![Home Page](/media/wireframe_home.png)
+
+
+- Post Details
+
+![Post details](/media/wireframe_post.png)
 
 ## Database
 
