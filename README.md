@@ -190,6 +190,18 @@ I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that wo
 | CommentForm - Body | Input empty value and click submit | Error message: “This field is required” | PASS |  |
 | BookForm - Field displayed | Check if the body field is explicit in comment metaclass | Only the listed field in the test is shown for the user. | PASS |  |
 
+
+### Views
+
+| Test Label | Test Action | Expected Outcome | Test Outcome | Screenshot |
+| --- | --- | --- | --- | --- |
+| Home | Testing load homepage | Page loaded with index.html template | PASS |  |
+| Books page | Testing load books page | Page loaded with books.html template | PASS |  |
+| Edit book | Testing edit a book | Book information id updated | PASS |  |
+| Create Book | Testing create a book | Book is created | PASS |  |
+| Delete Book | Testing delete a book | Book is deleted | PASS |  |
+
+
 - Bugs
 - Configuration
     - Forking the GitHub Repository

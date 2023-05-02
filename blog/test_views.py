@@ -7,16 +7,25 @@ class TestViews(TestCase):
     Testing pageload and crud functionalities
     """
     def test_get_homepage(self):
+        """
+        Testing load homepage
+        """
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'index.html')
 
     def test_get_books_page(self):
+        """
+        Testing load books page
+        """
         response = self.client.get('/books/', follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'base.html')
 
     def test_get_edit_book_page(self):
+        """
+        Testing edit a book
+        """
         user = User.objects.create()
         book = Book.objects.create(
             title='teste',
@@ -32,6 +41,9 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'base.html')
 
     def test_can_add_book(self):
+        """
+        Testing create a book
+        """
         user = User.objects.create()
         self.client.force_login(user)
         response = self.client.post('/add-book', {
@@ -47,6 +59,9 @@ class TestViews(TestCase):
             response, '/add-book/', status_code=301)
 
     def test_can_delete_book(self):
+        """
+        Testing delete a book
+        """
         user = User.objects.create()
         self.client.force_login(user)
         book = Book.objects.create(
