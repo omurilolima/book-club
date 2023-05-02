@@ -16,20 +16,25 @@ class TestViews(TestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'index.html')
+        self.assertTemplateUsed(response, 'base.html')
 
     def test_get_books_page(self):
         """
         Testing load books page
         """
-        response = self.client.get('/books/', follow=True)
+        user = User.objects.create()
+        self.client.force_login(user)
+        response = self.client.get('/books/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'base.html')
+        self.assertTemplateUsed(response, 'books.html')
 
     def test_get_edit_book_page(self):
         """
         Testing edit a book
         """
         user = User.objects.create()
+        self.client.force_login(user)
         book = Book.objects.create(
             title='teste',
             image_url='img',
@@ -41,11 +46,36 @@ class TestViews(TestCase):
             rating=1,
             data_started_reading='2011-10-05T14:48:00.000Z',
             date_finished_reading='2011-10-05T14:48:00.000Z',
-            user=user
+            user=user,
             )
-        response = self.client.get(f'/book/edit/{book.slug}', follow=True)
+
+        # check if the edit page loads
+        response = self.client.get(f'/book/edit/{book.slug}/', follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'base.html')
+        self.assertTemplateUsed(response, 'edit_book.html')
+
+        response_post = self.client.post(f'/book/edit/{book.slug}/', {
+            'title': 'teste12345',
+            'image_url': 'img',
+            'slug': 'teste',
+            'author': 'testador',
+            'number_of_pages': 1,
+            'category': 'teste123',
+            'about': 'bla-bla-bla',
+            'rating': 1,
+            'status': 1,
+            'data_started_reading':
+                '2011-10-05T14:48:00.000Z',
+            'date_finished_reading':
+                '2011-10-05T14:48:00.000Z',
+        })
+
+        self.assertRedirects(response_post, '/book/teste/')
+
+        # check if the title was edited
+        edited_book = Book.objects.filter(title="teste12345")
+        self.assertEqual(len(edited_book), 1)
 
     def test_can_add_book(self):
         """
