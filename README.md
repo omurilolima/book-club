@@ -180,26 +180,32 @@ I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that wo
 
 ### Forms
 
-| Test Label | Test Action | Expected Outcome | Test Outcome | Screenshot |
-| --- | --- | --- | --- | --- |
-| BookForm - Title | Input empty value and click submit | Error message: “This field is required” | PASS |  |
-| BookForm - Slug | Input empty value and click submit | Error message: “This field is required” | PASS |  |
-| BookForm - Category | Input empty value and click submit | Error message: “This field is required” | PASS |  |
-| BookForm - Image_url | Input empty value and click submit | No error message is displayed | PASS |  |
-| BookForm - Fields displayed | Check if the 'title', 'slug', 'image_url',' author', 'number_of_pages', 'category',' about', 'status', 'rating', 'data_started_reading', and 'date_finished_reading', fields are explicit in comment metaclass | Only the listed fields in the test are shown for the user. | PASS |  |
-| CommentForm - Body | Input empty value and click submit | Error message: “This field is required” | PASS |  |
-| BookForm - Field displayed | Check if the body field is explicit in comment metaclass | Only the listed field in the test is shown for the user. | PASS |  |
+| Test Label | Test Action | Expected Outcome | Test Outcome |
+| --- | --- | --- | --- |
+| BookForm - Title | Input empty value and click submit | Error message: “This field is required” | PASS |
+| BookForm - Slug | Input empty value and click submit | Error message: “This field is required” | PASS |
+| BookForm - Category | Input empty value and click submit | Error message: “This field is required” | PASS |
+| BookForm - Image_url | Input empty value and click submit | No error message is displayed | PASS |
+| BookForm - Fields displayed | Check if the 'title', 'slug', 'image_url',' author', 'number_of_pages', 'category',' about', 'status', 'rating', 'data_started_reading', and 'date_finished_reading', fields are explicit in comment metaclass | Only the listed fields in the test are shown for the user. | PASS |
+| CommentForm - Body | Input empty value and click submit | Error message: “This field is required” | PASS |
+| BookForm - Field displayed | Check if the body field is explicit in comment metaclass | Only the listed field in the test is shown for the user. | PASS |
 
 
 ### Views
 
-| Test Label | Test Action | Expected Outcome | Test Outcome | Screenshot |
-| --- | --- | --- | --- | --- |
-| Home | Testing load homepage | Page loaded with index.html template | PASS |  |
-| Books page | Testing load books page | Page loaded with books.html template | PASS |  |
-| Edit book | Testing edit a book | Book information id updated | PASS |  |
-| Create Book | Testing create a book | Book is created | PASS |  |
-| Delete Book | Testing delete a book | Book is deleted | PASS |  |
+| Test Label | Test Action | Expected Outcome | Test Outcome |
+| --- | --- | --- | --- |
+| Home | Testing load homepage | Page loaded with index.html template | PASS |
+| Books page | Testing load books page | Page loaded with books.html template | PASS |
+| Edit book | Testing edit a book | Book information id updated | PASS |
+| Create Book | Testing create a book | Book is created | PASS |
+| Delete Book | Testing delete a book | Book is deleted | PASS |
+
+### Models
+
+| Test Label | Test Action | Expected Outcome | Test Outcome |
+| --- | --- | --- | --- |
+| Comment | Creating a comment | __str__( ) method called by str() return the default f-string. | PASS |
 
 
 - Bugs
