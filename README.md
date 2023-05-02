@@ -178,6 +178,18 @@ I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that wo
 
 ## Automatic Testing
 
+Django testing tools have been used to perform basic automatic testing on Book Club Python code for validating the main logical thing. Tests were run using the local SQLite3 database as opposed to the production PostgreSQL database.
+
+Test scripts were written for the following blog app files;
+
+models.py
+views.py
+forms.py
+
+Those tests achieve 90% coverage. The results so far are highlighted in the summary report below:
+
+![Coverage report](/media/Coverage%20report.png)
+
 ### Forms
 
 | Test Label | Test Action | Expected Outcome | Test Outcome |

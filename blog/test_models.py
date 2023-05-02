@@ -23,3 +23,13 @@ class TestViews(TestCase):
         self.assertEqual(
             str(comment),
             f'Comment {comment.body} by {comment.name}')
+
+    def test_item_string_method_returns_title(self):
+        user = User.objects.create()
+        post = Post.objects.create(
+            title='Test',
+            slug='test',
+            author=user,
+        )
+
+        self.assertEqual(str(post), 'Test')
