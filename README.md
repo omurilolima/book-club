@@ -9,8 +9,8 @@ This is my fourth milestone project for the Full-Stack Software Development Cour
 ## Table of Contents
 
 - [Introdution](#introdution)
-- [Business goals addressed with this site](#business-goals-addressed-with-this-site)
-- [Customer needs](#customer-needs)
+    - [Business goals addressed with this site](#business-goals-addressed-with-this-site)
+    - [Customer needs](#customer-needs)
 - [UX](#ux)
     - [Ideal client](#ideal-client)
     - [User Stories](#user-stories)
@@ -50,13 +50,14 @@ The Book Club is a comprehensive Django website specialized in books. There, use
 
 ### Project Goals
 
-The primary goal of this project is to create an environment that enables full CRUD functionality to registered users so that they can CREATE, READ, UPDATE and DELETE books directly on the site without intermediaries.
+The primary goal of this project is to create an environment that enables full CRUD functionality to registered users, so that they can CREATE, READ, UPDATE and DELETE books directly on the site without intermediaries.
 
 The second goal is to provide a blog in which registered users can read, like and comment.
 
 ### Strategy
 
- This project uses Agile Methodology. A Kanban board in GitHub was created to support development process. A planning session generated 18 User Stories within 5 Epics, each one with their acceptance criterias. The development process was based on iterative incremental philosophy, adopting 1 week sprints with the following goals:
+ This project uses Agile Methodology. A Kanban board in GitHub was created to support the development process. A planning session generated 18 User Stories within 5 Epics, each one with their acceptance criterias. 2 of then was not implemented and they are listed in the "Features to Implement in the Future" session. The development process was based on iterative incremental philosophy, adopting 1 week sprints with the following goals:
+ 
 - <strong>Week 1</strong>: Basic structure and blog features running with boilerplate design and content.
 - <strong>Week 2</strong>: CRUD functionalities of Books section running with boilerplate design and content.
 - <strong>Week 3</strong>: Final version of the design and content + Messages.
