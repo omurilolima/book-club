@@ -24,7 +24,7 @@ This is my fourth milestone project for the Full-Stack Software Development Cour
 - [Features](#features)
 - [Database](#database)
 - [Testing](#testing)
-    - Validation
+    - Code Validation
     - Manual testing of user stories
     - Performing tests on various devices
     - Browser compatibility
@@ -271,7 +271,14 @@ Django User Model was used for creating the Post, Comment and Book models for th
 Back to [top](#table-of-contents)
 
 ## Testing
-- Validation
+
+### HTML Code Validation
+
+The W3C Markup Validation Service was used to validate the HTML of the website. All Django template tags were manually removed with the HTML code copied and inserted to the base template.
+
+<strong>Base.html</stron>
+![base.html](/media/Html_Checker.png)
+
 - Manual testing of user stories
 - Performing tests on various devices
 - Browser compatibility
