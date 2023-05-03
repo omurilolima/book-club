@@ -126,6 +126,7 @@ I used Google Fonts to select and import the font Poppins, including for main he
 ### Existing Features
 
 <strong>Navbar:</strong>
+
 The navbar is displayed in all the pages. On the left side you can find the logo with the name of the site and linked to the homepage. On the right side you can find the link to the main sections depending if you are logged in or not.
 
 - Not logged in: Home, Login and Register.
@@ -141,7 +142,7 @@ The navbar is fully responsive. Therefore, when on smaller devices the it will c
 
 ![Navbar Not Logged](/media/bookClub_navbar_mobile.png)
 
-- Home Page
+<strong>Home Page:</strong>
 
 The home page presents a main banner with the value proposition of the site (Discover new books and manage you reading list) and a button with a call to action to register. This banner only appears to not logged users.
 
@@ -149,26 +150,47 @@ There is also a section with the blog posts cards and a footer with the signatur
 
 ![Home Page](/media/bookClub_home.png)
 
-- Post
+<strong>Post:</strong>
 
 The post details (or full post) features the title and image on top, followed by the author, date and the main content.
 
 ![Post details](/media/bookClub_postDetail.png)
 
-- Likes and Comments
+<strong>Likes and Comments:</strong>
 
 At the end of the blog post, the user can like the post or leave a comment, only if have logged in.
 
 ![Post details](/media/bookClub_postDetail_footer.png)
 
-- My Books
+<strong>Add Books:</strong>
+
+Through a simple form, the user can easily add books to their profile to manage their readings.
+
+![Add Book](/media/BookClub_%20Add%20Book.png)
+
+<strong>My Books:</strong>
+
+On this page, the user can find all the books their add (books someone else added are not displayed). Each book is displayed on a card with some info. Every card has a button 'View details' which redirects the user to the Book details page. 
 
 ![My Books](/media/bookClub_Mybooksl.png)
 
-- Book details
+<strong>Book details:</strong>
+
+The book page show all the information about the book, including dates of start and end of the reading and the rating/score like stars. From there, the user can also edit the book info or delete the book. Before deleting, a pop-up is displayed for confirmation.
+
 ![Book details](/media/bookClub_bookDetail.png)
 
+### Features to Implement in Future
+
+- Contact form: Allows the user to send a message to the Site Admin [#18](https://github.com/omurilolima/book-club/issues/18)
+- Delete account: Allows the user to delete their account [#15](https://github.com/omurilolima/book-club/issues/15)
+- List 'My book' by status (reading, want to read, read).
+- Add review to book info.
+- Make 'My Books' public to allows user sharing their reading list with other users.
+
 ### Wireframes
+
+
 
 - Home Page
 
@@ -178,8 +200,6 @@ At the end of the blog post, the user can like the post or leave a comment, only
 - Post Details
 
 ![Post details](/media/wireframe_post.png)
-
-- Features to Implement in Future
 
 ## Database
 
