@@ -305,7 +305,42 @@ Those tests achieve 90% coverage. The results so far are highlighted in the summ
 | --- | --- | --- | --- |
 | Comment | Creating a comment | __str__( ) method called by str() return the default f-string. | PASS |
 
-### Technologies Used
+## Technologies Used
+
+### Languages:
+
+- HTML5
+- CSS3
+- Javascript
+- Python
+
+### Frameworks and Libraries
+
+- [Bootstrap](https://getbootstrap.com/): Styling and responsiveness.
+- [Cloudinary](https://cloudinary.com/): Hosting images.
+- [Coverage](https://coverage.readthedocs.io/en/latest/index.html): Measuring automated test coding coverage.
+- [Django](https://www.djangoproject.com/): Python web development framework.
+- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/index.html): Authentication and account registration.
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/): Control the rendering behavior of Django forms.
+- [Gunicorn](https://gunicorn.org/): Web Server to run Django on Heroku.
+- [psycopg2](https://pypi.org/project/psycopg2/): PostgreSQL database adapter.
+- [Summernote](https://github.com/summernote/django-summernote): To provide a WYSIWYG editor for add and customize blog content.
+
+### Software and Web Applications
+
+- [Figma](http://figma.com): Creating wireframes.
+- [Git](https://github.com/omurilolima): Version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+- [Github](https://github.com/omurilolima): Store the projects code after being pushed from Git.
+- [Gitpod](https://gitpod.io/): Cloud development environment.
+- [Heroku](https://heroku.com/): Deployment and hosting of the application.
+- [Heroku PostgreSQL](https://www.heroku.com/postgres): The database used for this application.
+- [JSHint](https://jshint.com/): Javascript code validation.
+- [Lighthouse](https://developer.chrome.com/docs/devtools/) Testing site performance on desktop and mobile devices.
+- [My Color](https://mycolor.space/): Choosing a color pallete.
+- [Notion](https://www.notion.so/): Documenting.
+- [Pomodoro Tracker](https://pomodoro-tracker.com/): Measuring my effort.
+- [W3C HTML](https://validator.w3.org/): HTML code valitadion service.
+- [W3C CSS](https://jigsaw.w3.org/css-validator/): CSS code valitadion service.
 
 ### Configuration
 
