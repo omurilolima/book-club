@@ -12,8 +12,10 @@ This is my fourth milestone project for the Full-Stack Software Development Cour
     - [Business goals addressed with this site](#business-goals-addressed-with-this-site)
     - [Customer needs](#customer-needs)
 - [UX](#ux)
+    - [Project goals](#project-goals)
     - [Ideal client](#ideal-client)
-    - [User Stories](#user-stories)
+    - [Strategy](#strategy)
+    - [User stories](#user-stories)
     - [Colour scheme](#colour-scheme)
     - [Typography](#typography)
     - [Website pages](#website-pages)
@@ -54,75 +56,113 @@ The primary goal of this project is to create an environment that enables full C
 
 The second goal is to provide a blog in which registered users can read, like and comment.
 
-### Strategy
-
- This project uses Agile Methodology. A Kanban board in GitHub was created to support the development process. A planning session generated 18 User Stories within 5 Epics, each one with their acceptance criterias. 2 of then was not implemented and they are listed in the "Features to Implement in the Future" session. The development process was based on iterative incremental philosophy, adopting 1 week sprints with the following goals:
- 
-- <strong>Week 1</strong>: Basic structure and blog features running with boilerplate design and content.
-- <strong>Week 2</strong>: CRUD functionalities of Books section running with boilerplate design and content.
-- <strong>Week 3</strong>: Final version of the design and content + Messages.
-- <strong>Week 4</strong>: Bugfix, final deploy and documentation.
-
-For more information: [View the Kanban Board here](https://github.com/users/omurilolima/projects/3).
-
 ### Ideal client
 - English speaking;
 - Has interest about books and reading;
 - Want to create a list of their readinds.
 
+### Strategy
+
+ This project uses Agile Methodology. A Kanban board in GitHub was created to support the development process. A planning session generated 18 User Stories within 6 Epics, each one with their acceptance criterias. 2 of then was not implemented and they are listed in the "Features to Implement in the Future" session. The development process was based on iterative incremental philosophy, adopting 1 week sprints with the following goals:
+
+- <strong>Week 1</strong>: Basic structure and blog features running with boilerplate design and content.
+- <strong>Week 2</strong>: CRUD functionalities of Books section running with boilerplate design and content.
+- <strong>Week 3</strong>: Final version of the design and content + Messages.
+- <strong>Week 4</strong>: Testing, final deploy and documentation.
+
+For more information: [View the Kanban Board here](https://github.com/users/omurilolima/projects/3).
+
 ### User Stories
-Epic: Account
+<strong>Epic: Account</strong>
 
 1. As a User, I want to create my account so that I can comment, like and add my books.
 2. As a returning user, I want to log in to the app to see my current books.
 3. I want to be able to log out of my account
 4. I want to see feedback messages to know that my book was created or edited successfully.
 
-Epic: Admin
+<strong>Epic: Admin</strong>
 
 5. As a Site Admin, I want to create, read, update and delete posts so that I can manage my blog content.
 
-Epic: Home page
+<strong>Epic: Home page</strong>
+
 6. As a User, I want to see the home page with the purpose of the site.
 7. As a User, I want to view a list of posts so that I can select one to read.
 
-Epic: Post
+<strong>Epic: Post</strong>
 
 8. As a User, I want to read the full content of a post.
 9. As a User, I want to view the number of likes on each post.
 10. As a User, I want to like a post.
 
-Epic: Comments
+<strong>Epic: Comments</strong>
 
 11. As a User, I want to view comments on a post.
 12. As a User, I want to leave a comment on a post.
 
-Epic: Book
+<strong>Epic: Book</strong>
 
 13. As a User, I want to add a book to my bookshelf.
 14. As a user, I want to see my books
 15. As a User, I want to be able to edit my current book information.
 16. I want to delete a book from my bookshelf.
 
-
 ### Colour scheme
+
 I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that would be easily readable and visually appealing to users.
 
 ![Colour scheme](/media/mycolor.jpg)
 
+</details>
+
 ### Typography
+
+I used Google Fonts to select and import the font Poppins, including for main headers and the logo because it is modern but easily readable at the same time.
 
 ![Typography - Poppins font](/media/Poppins%20-%20Google%20Fonts.jpg)
 
-### Website pages
+## Features
+
+### Existing Features
+
+<strong>Navbar:</strong>
+The navbar is displayed in all the pages. On the left side you can find the logo with the name of the site and linked to the homepage. On the right side you can find the link to the main sections depending if you are logged in or not.
+
+- Not logged in: Home, Login and Register.
+
+![Navbar Not Logged](/media/bookClub_navbar.png)
+
+- Logged in: Home, My Books, Add Books and Logout.
+
+![Navbar Not Logged](/media/bookClub_navbar_logged.png)
+
+The navbar is fully responsive. Therefore, when on smaller devices the it will collapse and the navigation links are accessed using a ”hamburger menu”.
+
+
+![Navbar Not Logged](/media/bookClub_navbar_mobile.png)
+
 - Home Page
+
+The home page presents a main banner with the value proposition of the site (Discover new books and manage you reading list) and a button with a call to action to register. This banner only appears to not logged users.
+
+There is also a section with the blog posts cards and a footer with the signature and social icons.
 
 ![Home Page](/media/bookClub_home.png)
 
 - Post
+
+The post details (or full post) features the title and image on top, followed by the author, date and the main content.
+
 ![Post details](/media/bookClub_postDetail.png)
 
+- Likes and Comments
+
+At the end of the blog post, the user can like the post or leave a comment, only if have logged in.
+
+![Post details](/media/bookClub_postDetail_footer.png)
+
 - My Books
+
 ![My Books](/media/bookClub_Mybooksl.png)
 
 - Book details
@@ -138,6 +178,8 @@ I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that wo
 - Post Details
 
 ![Post details](/media/wireframe_post.png)
+
+- Features to Implement in Future
 
 ## Database
 
@@ -185,9 +227,6 @@ I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that wo
 | Date finished reading  | DateTimeField | ` |
 | created_on | DateTimeField | auto_now_add True |
 | user | ForeignKey |  |
-
-## Features
-- Features to Implement in Future
 
 ## Testing
 - Validation
