@@ -188,20 +188,24 @@ The book page show all the information about the book, including dates of start 
 - Add review to book info.
 - Make 'My Books' public to allows user sharing their reading list with other users.
 
-### Wireframes
+## Wireframes
 
+As part of the planning phase, before start the devopment, the wireframes for the main features were created using Figma. The wireframes were used to get a basic idea on how the site might look when finished.
 
-
-- Home Page
+### Home Page
 
 ![Home Page](/media/wireframe_home.png)
 
 
-- Post Details
+### Post Details
 
 ![Post details](/media/wireframe_post.png)
 
 ## Database
+
+The Book Club is hosted on Heroku and the database used is Heroku PostgreSQL. The images of the books and posts are hosted using Cloudinary.
+
+Django User Model was used for creating the Post, Comment and Book models for the database. Below are the Entity-Relationship Tables:
 
 ### Post model
 | Name | Type | Extra Info |
