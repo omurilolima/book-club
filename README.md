@@ -18,10 +18,11 @@ This is my fourth milestone project for the Full-Stack Software Development Cour
     - [User stories](#user-stories)
     - [Colour scheme](#colour-scheme)
     - [Typography](#typography)
+    - [Images and Post Content](#images-and-post-content)
     - [Website pages](#website-pages)
     - [Wireframes](#wireframes)
-- [Database](#database)
 - [Features](#features)
+- [Database](#database)
 - [Testing](#testing)
     - Validation
     - Manual testing of user stories
@@ -113,13 +114,16 @@ I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that wo
 
 ![Colour scheme](/media/mycolor.jpg)
 
-</details>
-
 ### Typography
 
 I used Google Fonts to select and import the font Poppins, including for main headers and the logo because it is modern but easily readable at the same time.
 
 ![Typography - Poppins font](/media/Poppins%20-%20Google%20Fonts.jpg)
+
+### Images and Post Content
+
+All the book images on the site were gathered on Amazon website.
+The blog posts were oginaly published by [Bill Gates](https://www.gatesnotes.com/) on his personal blog.
 
 ## Features
 
