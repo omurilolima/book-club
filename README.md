@@ -49,6 +49,8 @@ The Book Club is a comprehensive Django website specialized in books. There, use
 - Interact with content about books;
 - Manage their readings.
 
+Back to [top](#table-of-contents)
+
 ## UX
 
 ### Project Goals
@@ -72,6 +74,8 @@ The second goal is to provide a blog in which registered users can read, like an
 - <strong>Week 4</strong>: Testing, final deploy and documentation.
 
 For more information: [View the Kanban Board here](https://github.com/users/omurilolima/projects/3).
+
+Back to [top](#table-of-contents)
 
 ### User Stories
 <strong>Epic: Account</strong>
@@ -108,6 +112,8 @@ For more information: [View the Kanban Board here](https://github.com/users/omur
 15. As a User, I want to be able to edit my current book information.
 16. I want to delete a book from my bookshelf.
 
+Back to [top](#table-of-contents)
+
 ### Colour scheme
 
 I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that would be easily readable and visually appealing to users.
@@ -124,6 +130,8 @@ I used Google Fonts to select and import the font Poppins, including for main he
 
 All the book images on the site were gathered on Amazon website.
 The blog posts were oginaly published by [Bill Gates](https://www.gatesnotes.com/) on his personal blog.
+
+Back to [top](#table-of-contents)
 
 ## Features
 
@@ -192,6 +200,8 @@ The book page show all the information about the book, including dates of start 
 - Add review to book info.
 - Make 'My Books' public to allows user sharing their reading list with other users.
 
+Back to [top](#table-of-contents)
+
 ## Wireframes
 
 As part of the planning phase, before start the devopment, the wireframes for the main features were created using Figma. The wireframes were used to get a basic idea on how the site might look when finished.
@@ -204,6 +214,8 @@ As part of the planning phase, before start the devopment, the wireframes for th
 ### Post Details
 
 ![Post details](/media/wireframe_post.png)
+
+Back to [top](#table-of-contents)
 
 ## Database
 
@@ -256,13 +268,15 @@ Django User Model was used for creating the Post, Comment and Book models for th
 | created_on | DateTimeField | auto_now_add True |
 | user | ForeignKey |  |
 
+Back to [top](#table-of-contents)
+
 ## Testing
 - Validation
 - Manual testing of user stories
 - Performing tests on various devices
 - Browser compatibility
 
-## Automatic Testing
+### Automatic Testing
 
 Django testing tools have been used to perform basic automatic testing on Book Club Python code for validating the main logical thing. Tests were run using the local SQLite3 database as opposed to the production PostgreSQL database.
 
@@ -305,6 +319,8 @@ Those tests achieve 90% coverage. The results so far are highlighted in the summ
 | --- | --- | --- | --- |
 | Comment | Creating a comment | __str__( ) method called by str() return the default f-string. | PASS |
 
+Back to [top](#table-of-contents)
+
 ## Technologies Used
 
 ### Languages:
@@ -342,11 +358,19 @@ Those tests achieve 90% coverage. The results so far are highlighted in the summ
 - [W3C HTML](https://validator.w3.org/): HTML code valitadion service.
 - [W3C CSS](https://jigsaw.w3.org/css-validator/): CSS code valitadion service.
 
-### Configuration
+Back to [top](#table-of-contents)
+
+## Configuration
 
 - Forking the GitHub Repository
 - Making a Local Clone
 
-### Credits
+Back to [top](#table-of-contents)
+
+## Credits
+
+Back to [top](#table-of-contents)
 
 ### Acknowledgements
+
+Back to [top](#table-of-contents)
