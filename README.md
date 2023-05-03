@@ -8,32 +8,29 @@ This is my fourth milestone project for the Full-Stack Software Development Cour
 
 ## Table of Contents
 
-- Introdution
-- User Goals
-- Business goals addressed with this site
-- Customer needs
-- UX
-    - Ideal client
-    - User Stories
-    - Colour scheme
-    - Typography
-    - Website pages
-    - Wireframes
-- Database
-- Technologies Used
-- Features
-- Features to Implement in Future
-- Testing
+- [Introdution](#introdution)
+- [Business goals addressed with this site](#business-goals-addressed-with-this-site)
+- [Customer needs](#customer-needs)
+- [UX](#ux)
+    - [Ideal client](#ideal-client)
+    - [User Stories](#user-stories)
+    - [Colour scheme](#colour-scheme)
+    - [Typography](#typography)
+    - [Website pages](#website-pages)
+    - [Wireframes](#wireframes)
+- [Database](#database)
+- [Features](#features)
+- [Testing](#testing)
     - Validation
     - Manual testing of user stories
     - Performing tests on various devices
     - Browser compatibility
-- Bugs
-- Configuration
+- [Technologies Used](#technologies-used)
+- [Configuration](#configuration)
     - Forking the GitHub Repository
     - Making a Local Clone
-- Credits
-- Acknowledgements
+- [Credits](#credits)
+- [Acknowledgements](#acknowledgements)
 
 ## Introdution
 
@@ -65,7 +62,7 @@ The second goal is to provide a blog in which registered users can read, like an
 - <strong>Week 3</strong>: Final version of the design and content + Messages.
 - <strong>Week 4</strong>: Bugfix, final deploy and documentation.
 
-For more information: View the Kanban Board here.
+For more information: [View the Kanban Board here](https://github.com/users/omurilolima/projects/3).
 
 ### Ideal client
 - English speaking;
@@ -188,15 +185,14 @@ I used [mycolor.space](https://mycolor.space/) to choose a colour scheme that wo
 | created_on | DateTimeField | auto_now_add True |
 | user | ForeignKey |  |
 
-
-- Technologies Used
-- Features
+## Features
 - Features to Implement in Future
-- Testing
-    - Validation
-    - Manual testing of user stories
-    - Performing tests on various devices
-    - Browser compatibility
+
+## Testing
+- Validation
+- Manual testing of user stories
+- Performing tests on various devices
+- Browser compatibility
 
 ## Automatic Testing
 
@@ -241,10 +237,13 @@ Those tests achieve 90% coverage. The results so far are highlighted in the summ
 | --- | --- | --- | --- |
 | Comment | Creating a comment | __str__( ) method called by str() return the default f-string. | PASS |
 
+### Technologies Used
 
-- Bugs
-- Configuration
-    - Forking the GitHub Repository
-    - Making a Local Clone
-- Credits
-- Acknowledgements
+### Configuration
+
+- Forking the GitHub Repository
+- Making a Local Clone
+
+### Credits
+
+### Acknowledgements
