@@ -342,9 +342,26 @@ No errors were found when passing the CSS file through the The W3C CSS Validator
 | Delete a Book | On the book page, click the “Delete” button and click the “Delete” button in the confirmation popup. | The book must be deleted. | PASS |
 
 
-### Performing tests on various devices
+### Browser Testing
 
-### Browser compatibility
+I have tested this application works on the following installed browsers, using a Dell laptop on Windows OS:
+
+- Microsoft Edge 112.0.1722.68
+- Google Chrome Version 112.0.5615.138
+- Firefox Browser 112.0.1
+
+I have tested this application works on the following Android devices using Chrome browser 112.0.5615.138:
+
+- Samsung Galaxy S20FE with Android 13.
+- Samsung Galaxy S22 with Android 13.
+
+### Responsiveness
+
+I used Chrome developer tool to check the responsiveness on different screen sizes:
+- 375px (Mobile)
+- 728px (Tablet)
+- 1024px (laptop)
+- 4k (Monitor resolution)
 
 ### Automatic Testing
 
