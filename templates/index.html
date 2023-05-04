@@ -52,11 +52,10 @@
                             <div class="card-body">
                                 <div class="image-container mb-3">
                                     {% if 'placeholder' in post.featured_image.url %}
-                                    <!-- CHANGE IMAGE LATER -->
                                     <img  class="card-img-top" 
-                                        src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                        src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="Featured image">
                                     {% else %}
-                                    <img src="{{ post.featured_image.url }}" class="card-img-top">
+                                    <img src="{{ post.featured_image.url }}" class="card-img-top" alt="Featured image">
                                     {% endif %}
                                     <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>

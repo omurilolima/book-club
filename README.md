@@ -276,12 +276,54 @@ Back to [top](#table-of-contents)
 
 The W3C Markup Validation Service was used to validate the HTML of the website. All Django template tags were manually removed with the HTML code copied and inserted to the base template.
 
-<strong>Base.html</stron>
-![base.html](/media/Html_Checker.png)
+<details>
+<summary><strong>base.html</strong> </summary>
 
-- Manual testing of user stories
-- Performing tests on various devices
-- Browser compatibility
+![base.html](/media/Html_Checker.png)
+</details>
+
+<details>
+<summary> <strong>add-book.html</strong></summary>
+
+![base.html](/media/addbook_html_Checker.png)
+</details>
+
+<details>
+<summary> <strong>book_detail.html</strong></summary>
+
+![base.html](/media/book_detail_html_hecker.png)
+</details>
+
+<details>
+<summary> <strong>books.html</strong></summary>
+
+![base.html](/media/books_html_checker.png)
+</details>
+
+<details>
+<summary> <strong>edit_books.html</strong></summary>
+
+![base.html](/media/edit_book_html_checker.png)
+</details>
+
+<details>
+<summary> <strong>index.html</strong></summary>
+
+![base.html](/media/index_html_checker.png)
+</details>
+
+<details>
+<summary> <strong>post_detail.html</strong></summary>
+
+![base.html](/media/post_detail_html_checker.png)
+</details>
+
+### Manual testing of user stories
+
+
+### Performing tests on various devices
+
+### Browser compatibility
 
 ### Automatic Testing
 
