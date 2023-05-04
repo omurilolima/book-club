@@ -320,7 +320,7 @@ The W3C Markup Validation Service was used to validate the HTML of the website. 
 
 ### CSS Code Validation
 
-The W3C CSS Validator was used to validate the CSS file to ensure that there was no errors.
+No errors were found when passing the CSS file through the The W3C CSS Validator.
 
 <details>
 <summary> <strong>CSS file validation results</strong></summary>
@@ -328,8 +328,18 @@ The W3C CSS Validator was used to validate the CSS file to ensure that there was
 ![base.html](/media/css_validator.png)
 </details>
 
+### Manual testing
 
-### Manual testing of user stories
+| Test Label | Test Action | Expected Outcome | Test Outcome |
+| --- | --- | --- | --- |
+| Site loading | Navigate to the “home page”, “login”, “Register”, “Add a book”, “logout” and “My books” page. | All the pages and elements are loaded according. | PASS |
+| Read a blog post | On the homepage, click on one of the cards presented in the “read our blog posts” section. | All the elements of post_detail are loaded according. | PASS |
+| Leave a comment without logging | On the “post page”, without having logged in, go to the comment section. | A message informing that “To see the comments and leave a comment, please log in or create an account.” must be presented followed by the buttons “login” and “register”. | PASS |
+| Leave a comment being logged in. | On the “post page”, having logged in, go to the comment section. Write some text and hit the “submit” button. | A message informing that “Your comment is awaiting approval” must be displayed. | PASS |
+| Like a post | On the “post page”, click on the heart icon. | The counter of likes must increase by 1. | PASS |
+| Add a book | On the navbar, click the “Add Books” option, fill out the form and hit the “Submit” button. | A success message must be displayed and the book must be listed on the “My books” page. | PASS |
+| Edit a book | On the book page, click the “Edit” button, change some info on the form and hit the “Submit” button. | A success message must be displayed and the book info must be updated. | PASS |
+| Delete a Book | On the book page, click the “Delete” button and click the “Delete” button in the confirmation popup. | The book must be deleted. | PASS |
 
 
 ### Performing tests on various devices
