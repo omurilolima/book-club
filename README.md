@@ -315,8 +315,19 @@ The W3C Markup Validation Service was used to validate the HTML of the website. 
 <details>
 <summary> <strong>post_detail.html</strong></summary>
 
-![base.html](/media/post_detail_html_checker.png)
+![base.html](/media/post_detail_html_hecker.png)
 </details>
+
+### CSS Code Validation
+
+The W3C CSS Validator was used to validate the CSS file to ensure that there was no errors.
+
+<details>
+<summary> <strong>CSS file validation results</strong></summary>
+
+![base.html](/media/css_validator.png)
+</details>
+
 
 ### Manual testing of user stories
 
