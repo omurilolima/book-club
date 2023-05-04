@@ -7,7 +7,7 @@
 
 
         <!-- Blog Entries Column -->
-<div class="container-fluid home">
+<div class="container-fluid home g-0">
     {% if not user.is_authenticated %}
         <div class="container-fluid bg-home">
             <div class="row hero">
@@ -26,11 +26,9 @@
                                             <p class="card-text mb-4">Already a member? 
                                                 <a href="{% url 'account_login' %}" class="text-secondary">Sign In</a></p>
                                         </div>
-                                        <div>
                                             <a href="{% url 'account_signup' %}">
-                                                <button type="button" class="banner-button btn btn-signup btn-sm ms-2">Register</button>
+                                                <button type="button" class="banner-button btn btn-signup ms-2">Register</button>
                                             </a>
-                                        </div>
                                     </div> 
                                 </div>
                             </div>
@@ -48,7 +46,7 @@
                 <div class="row">
                 {% for post in post_list %}
                     <div class="col-md-4">
-                        <div class="card">
+                        <div class="card post-card">
                             <div class="card-body">
                                 <div class="image-container mb-3">
                                     {% if 'placeholder' in post.featured_image.url %}

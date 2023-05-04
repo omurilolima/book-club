@@ -200,8 +200,26 @@ h2, h3, h4 {
         width: auto;
       }
 
+      .banner-body a {
+        margin: auto;
+      }
+
     .banner-button {
         width: 16em;
         height: 3em;
     }
+
+    .posts {
+        margin-left: 0.5em;
+    }
+
+    .card {
+        margin: 1em;
+
+    }
+
+    .card.post-card {
+        width: 85%;
+    }
+
   }
