@@ -240,4 +240,8 @@ h2, h3, h4 {
         width: 16em;
     }
 
+    .book-delete {
+        margin-top: 0.5em;
+    }
+
   }

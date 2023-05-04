@@ -9,11 +9,11 @@
 
             <div class="col-lg-8">
                 <div class="card">
-                    <div class="row g-0">
-                        <div class="col-6 col-md-5">
+                    <div class="row book g-0">
+                        <div class="col-6 book-img col-md-5">
                             <img src="{{ book.image_url }}" class="card-img img-fluid rounded-start" alt="{{ book.title }}">
                         </div>
-                        <div class="col-6 col-md-7">
+                        <div class="book-body col-6 col-md-7">
                             <div class="card-body d-flex flex-column">
                                 <div class="h-100">
                                     <h3 class="card-title">By: {{ book.author }}</h3>
@@ -32,9 +32,9 @@
                                             <button type="submit" class="btn btn-dark btn-sm me-1">Edit</button>
                                         </a>
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-danger btn-sm book-delete" data-bs-toggle="modal"
                                         data-bs-target="#deleteModal">
-                                        DELETE
+                                        Delete
                                     </button>
                                     <!-- Modal -->
                                     <div class="modal fade" id="deleteModal" tabindex="-1"
@@ -54,7 +54,7 @@
                                                     <button type="button" class="btn btn-secondary"
                                                         data-bs-dismiss="modal">Cancel</button>
                                                     <a href="{% url 'book_delete' book.slug %}" class="post-link">
-                                                        <button type="button" class="btn btn-danger btn-sm">DELETE</button>
+                                                        <button type="button" class="btn btn-danger">DELETE</button>
                                                     </a>
                                                 </div>
                                             </div>
