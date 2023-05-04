@@ -7,19 +7,19 @@
 
 
         <!-- Blog Entries Column -->
-<div class="container-fluid">
+<div class="container-fluid home">
     {% if not user.is_authenticated %}
         <div class="container-fluid bg-home">
             <div class="row hero">
-                <div class="col-12 col-md-8 mt-4 d-flex justify-content-evenly">
+                <div class="col-12 mt-4 mb-4 d-flex justify-content-evenly">
                         <div class="card">
                             <div class="row g-0">
-                                <div class="col-6 col-md-5">
+                                <div class="banner-img col-8 col-md-5">
                                     <img src="https://res.cloudinary.com/dr3djjbyy/image/upload/v1682074701/woman-reading_i6fwlc.png" class="card-img img-fluid rounded-start" 
                                         alt="{{ book.title }}">
                                 </div>
-                                <div class="col-6 col-md-7">
-                                    <div class="card-body d-flex flex-column">
+                                <div class="banner-body col-6 col-md-7">
+                                    <div class=" card-body d-flex flex-column">
                                         <div class="h-100">
                                             <h3 class="card-title">Welcome to the <strong>Book Club</strong>!</h3>
                                             <h2 class="card-title">Discover new books and manage you reading list</h2>
@@ -28,7 +28,7 @@
                                         </div>
                                         <div>
                                             <a href="{% url 'account_signup' %}">
-                                                <button type="button" class="btn btn-signup btn-sm ms-2">Register</button>
+                                                <button type="button" class="banner-button btn btn-signup btn-sm ms-2">Register</button>
                                             </a>
                                         </div>
                                     </div> 
