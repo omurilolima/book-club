@@ -441,6 +441,7 @@ Back to [top](#table-of-contents)
 - [Heroku](https://heroku.com/): Deployment and hosting of the application.
 - [Heroku PostgreSQL](https://www.heroku.com/postgres): The database used for this application.
 - [JSHint](https://jshint.com/): Javascript code validation.
+- [PEP8](https://peps.python.org/pep-0008/): Python code validation.
 - [Lighthouse](https://developer.chrome.com/docs/devtools/) Testing site performance on desktop and mobile devices.
 - [My Color](https://mycolor.space/): Choosing a color pallete.
 - [Notion](https://www.notion.so/): Documenting.
