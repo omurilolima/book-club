@@ -2,7 +2,7 @@
 Developer: <a href='https://www.linkedin.com/in/omurilolima/' target='_blank'>Murilo Lima</a>
 Visit the live site
 
- IMAGE with different screen sizes
+![Book-Club](/media/BookClub_readme_image.png)
 
 This is my fourth milestone project for the Full-Stack Software Development Course at Code Institute / University College Dublin
 
