@@ -449,8 +449,131 @@ Back to [top](#table-of-contents)
 
 ## Configuration
 
-- Forking the GitHub Repository
-- Making a Local Clone
+<details>
+<summary><strong>Forking the GitHub Repository</strong></summary>
+
+To fork this website to either propose changes or to use as an idea for another website, follow these steps:
+
+If you haven't yet, you should first set up Git. Don't forget to set up authentication to GitHub.com from Git as well.
+1. Navigate to the [Book Club](https://github.com/omurilolima/book-club) page on GitHub.
+2. Click the 'Fork' button on the upper right part of the page. It's in between 'Watch' and 'Star'.
+3. You will now have a fork of the Book Club repository added to your GitHub profile. Navigate to your own profile and find the forked repository to add the required files.
+5. Above the list of forked files click the 'Code' button.
+6. A drop-down menu will appear providing a choice of cloning options. Select the one which is applicable to your setup.
+
+Further details can be found on GitHub's [Fork a Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo) page.
+
+To deploy locally with GitHub, follow these steps:
+
+1. Log into your GitHub repository, create a GitHub account if necessary.
+2. Click 'Settings' in the main Repository menu.
+3. Click 'Pages' from the left-hand side navigation menu.
+4. Within the Source section, click the "Branch" button and change from 'None' to 'Main'.
+5. The page should automatically refresh with a url displayed.
+6. Test the link by clicking on the url.
+
+
+To push code using GitPod, following the steps:
+
+1. With the application open, open the command line terminal (CLI).
+2. Stage any changes using the command 'git add .' or by specifying the file with changes i.e 'git add settings.py'
+3. Commit the changes to GitHub by adding a commit message describing the changes i.e. 'git commit -m "Update docbook dependency and generate epub".
+4. Finally add the command 'git push' which will push all the code to GitHub.
+5. Additionally if you would like to run the application locally pre/post any changes, from the terminal type 'python3 manage.py runserver'.
+6. A dialog box should open asking you to open port 8000, click 'Open' and navigate to the opened tab/window which should allow you to view the running application.
+7. If the dialog box does not automatically appear, find the 'Remote Explorer' section of the left hand navbar within GitPod and click on the port '8000' and the internet/globe icon to the right which should open the running application.
+</details>
+
+<details>
+<summary><strong>PostgreSQL Database</strong></summary>
+
+ElephantSQL replaced the originally selected free Heroku add-on PostgreSQL database due to the Heroku version becoming a chargeable service. Post MVP release I followed steps provided by the Code Institute to migrate the database from the Heroku version to Elephant. Dependant on your circumstances you may wish to use Heroku, Elephant or another service for your database.
+
+1. If using Elephant, navigate to elephantsql.com and click 'Get a managed database today'. When presented with options for differing plans, I chose the free 'Tiny Turtle' plan.
+2. Select “Log in with GitHub” and authorize ElephantSQL with your selected GitHub account.
+3. In the Create new team form:
+    - Add a team name (your own name is fine).
+    - Read and agree to the Terms of Service.
+    - Select Yes for GDPR.
+    - Provide your email address.
+    - Click “Create Team”.
+4. Your account should now be created.
+5. Now you will need to create your database. Navigate to your elephantsql.com dashboard, and click "Create New Instance".
+6. Set up your plan:
+    - Give your plan a Name (this is commonly the name of the project).
+    - Select the Tiny Turtle (Free) plan.
+    - You can leave the Tags field blank.
+7. Select a data center near you.
+8. Click "Review".
+9. Check your details are correct and then click "Create Instance".
+10. Return to the ElephantSQL dashboard and click on the database instance name for this project.
+11. You will return to this projects dashboard as part of the steps to 'Deploy with Heroku' as you will need the DATABASE_URL.
+</details>
+
+<details>
+<summary><strong>Deploy with Heroku</strong></summary>
+
+1. Log in to Heroku at https://heroku.com - create an account if needed.
+
+2. From the Heroku dashboard, click the Create new app button. For a new account an icon will be visible on screen to allow you to Create an app, otherwise a link to this function is located under the New dropdown menu at the top right of the screen.
+
+3. On the Create New App page, enter a unique name for the application and select region. Then click Create app.
+
+4. On the Application Configuration page for the new app, click on the Resources tab.
+
+5. Next, click on Settings on the Application Configuration page and click on "Reveal Config Vars".
+
+6. Add a new Config Var called DISABLE_COLLECTSTATIC and assign it a value of 1, and click Add to save it. Remove this when releasing for Production.
+
+7. Add a new Config Var called SECRET_KEY and assign it a value - any random string of letters, digits and symbols, and click Add to save it.
+
+8. Add a new Config Var called DATABASE_URL and paste in the value for your ElephantSQL database, and click Add to save it.
+
+9. The settings.py file should be updated to use the DATABASE_URL and SECRET_KEY environment variable values as follows :
+```
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+```
+10. In Gitpod, in the project terminal window, to initialize the data model in the postgres database, run the command : python3 manage.py migrate
+
+11. Update the requirements.txt file with all necessary supporting files by entering the command : 
+```
+pip freeze > requirements.txt
+```
+12. Commit and push any local changes to GitHub.
+
+13. In order to be able to run the application on localhost, add SECRET_KEY and DATABASE_URL and their values to env.py
+
+Connect GitHub Repo to Heroku App
+
+1. Navigate to Application Configuration page for the application on Heroku and click on the Deploy tab.
+2. Select GitHub as the Deployment Method and if prompted, confirm that you want to connect to GitHub. Enter and search for the required repository, then click on Connect to link them up.
+3. Scroll down the page and choose to either Automatically Deploy each time changes are pushed to GitHub, or Manually deploy.
+4. The application can be run from the Application Configuration page by clicking on the Open App button.
+5. Each time you push code from your GitHub Repo it will be automatically reflected in your Heroku App.
+
+The url for this website can be found here https://pp4-book-club.herokuapp.com/
+</details>
+
+<details>
+<summary><strong>Pre Production Deployment</strong></summary>
+
+When the project be ready to move to production, the following steps must be taken to ensure your site works correctly and is secure.
+
+In GitPod:
+
+1. Set DEBUG flag to False in settings.py
+2. Check the following line exists in settings.py to enable Summernote to work on the deployed environment (CORS security feature): X_FRAME_OPTIONS = 'SAMEORIGIN'
+3. Update the requirements.txt file with all necessary supporting files by entering the command:
+```
+pip freeze > requirements.txt
+```
+In the Heroku App:
+
+1. Go to Settings menu > Config Vars : Delete environment variable : DISABLE_COLLECTSTATIC
+2. Go to Deploy menu: Click on deploy branch
+</details>
 
 Back to [top](#table-of-contents)
 
