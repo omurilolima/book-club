@@ -1,10 +1,11 @@
 # Book Club
 Developer: <a href='https://www.linkedin.com/in/omurilolima/' target='_blank'>Murilo Lima</a>
-Visit the live site
 
-![Book-Club](/media/BookClub_readme_image.png)
+Visit the [live site](https://pp4-book-club.herokuapp.com/)
 
 This is my fourth milestone project for the Full-Stack Software Development Course at Code Institute / University College Dublin
+
+![Book-Club](/media/BookClub_readme_image.png)
 
 ## Table of Contents
 
