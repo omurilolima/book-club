@@ -595,6 +595,7 @@ In addition to the knowledge acquired in the [Professional Academy Diploma in Fu
 - All the icons were taken from [Font Awesome](https://fontawesome.com/icons).
 - All the blog content was taken from the [GatesNotes](https://www.gatesnotes.com/)
 - All the books content were taken from [Amazon Books](https://www.amazon.co.uk/books-used-books-textbooks/b?ie=UTF8&node=266239)
+- README Documenting was inspired by [FishTales](https://github.com/mittnamnkenny/fishtales) and [FreshCats](https://github.com/RickofManc/fresh-casts)
 
 Back to [top](#table-of-contents)
 

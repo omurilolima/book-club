@@ -66,23 +66,21 @@
             <div class="card-body">
                 {% if user.is_authenticated %}
                 <h3>Comments:</h3>
-                <!-- We want a for loop inside the tags to iterate through each comment in comments -->
+                <!-- For loop to iterate through each comment in comments -->
                 {% for comment in comments %}
                 <div class="comments card mt-2" style="padding: 10px;">
                     <p class="font-weight-bold">
-                        <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                         <strong>{{ comment.name }}</strong> at
                         <span class="fst-italic text-muted font-weight-normal">
-                            <!-- The comment's created date goes here -->
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
-                    <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
                 </div>
-                <!-- Our for loop ends here -->
+                <!-- For loop ends here -->
                 {% endfor %}
                 {% else %}
+                <!-- Condition when the user is not authenticated -->
                 <h3>Comments:</h3>
                 <p class="fs-5">To see the comments and leave a comment, please log in or create an account.</p>
                 <a href="{% url 'account_login' %}">
@@ -103,8 +101,6 @@
                                 Your comment is awaiting approval
                             </div>
                         {% else %}
-
-                        
                             <h3>Leave a comment:</h3>
                             <p>Posting as: <strong>{{ user.username }}</strong></p>
                             <form method="post">

@@ -10,6 +10,7 @@ h2, h3, h4 {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Navigation */
 .brand {
     font-family: 'Poppins', sans-serif;
     font-size: 1.4rem;
@@ -24,6 +25,8 @@ h2, h3, h4 {
 .thin {
     font-weight: 300;
 }
+
+/* Backgrounds */
 
 .bg {
     background-color: white;
@@ -51,6 +54,8 @@ h2, h3, h4 {
     background-color: #F9FAFC;
 }
 
+/* Main content */
+
 .card {
     margin-right: auto;
     padding: 0;
@@ -73,14 +78,6 @@ h2, h3, h4 {
     font-size: 1.1rem;
 }
 
-.footer i {
-    color: white;
-}
-
-.image-container {
-    position: relative;
-}
-
 .hero {
     position: relative;
     display: flex;
@@ -94,6 +91,19 @@ h2, h3, h4 {
     align-items: center;
     justify-content: space-evenly;
 }
+
+
+/* Footer */
+
+.footer i {
+    color: white;
+}
+
+.image-container {
+    position: relative;
+}
+
+/* Post content */
 
 .image-flash {
     position: absolute;
@@ -154,6 +164,8 @@ h2, h3, h4 {
     color: lightgray;
 }
 
+/* Account */
+
 .btn-signup {
     background-color: #00B64F;
     color: #fff;
@@ -190,7 +202,7 @@ h2, h3, h4 {
 }
 
 
-/* banner-img */
+/* Media query for small devices */
 
 @media screen and (max-width: 425px) {
     .banner-img {

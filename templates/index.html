@@ -6,7 +6,7 @@
 {% block content %}
 
 
-        <!-- Blog Entries Column -->
+<!-- Display a banner if the user is not authenticated -->
 <div class="container-fluid home g-0">
     {% if not user.is_authenticated %}
         <div class="container-fluid bg-home">
@@ -37,6 +37,7 @@
             </div>
         </div>
     {% endif %}
+    <!-- List of blog posts -->
     <div class="container mt-3">
         <div class="row posts">
             <h2>Read our blog posts:</h2>

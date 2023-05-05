@@ -8,7 +8,7 @@
 </div>
 <div class="container mb-5">
     <div class="row g-5 justify-content-evenly">
-        <!-- We want a for loop inside the tags to iterate through each comment in comments -->
+        <!-- For loop to iterate through each book in book_list -->
         {% for book in book_list %}
         <div class="col-lg-6">
             <div class="card">
@@ -34,6 +34,7 @@
                 </div>
             </div>
         </div>
+        <!-- Condition if there is no books created yet -->
         {% empty %}
         <div class="row mt-5">
             <div class="col-12">
@@ -42,7 +43,7 @@
                     <button type="button" class="btn btn-signup">Add a book</button>
                 </a>
             </div>
-        <!-- Our for loop ends here -->
+        <!-- For loop ends here -->
         {% endfor %}
     </div>
 </div>
