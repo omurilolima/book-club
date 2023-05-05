@@ -31,7 +31,9 @@ This is my fourth milestone project for the Full-Stack Software Development Cour
 - [Technologies Used](#technologies-used)
 - [Configuration](#configuration)
     - Forking the GitHub Repository
-    - Making a Local Clone
+    - PostgreSQL Database
+    - Deploy with Heroku
+    - Pre Production Deployment
 - [Credits](#credits)
 - [Acknowledgements](#acknowledgements)
 
@@ -578,9 +580,31 @@ In the Heroku App:
 Back to [top](#table-of-contents)
 
 ## Credits
+### Code
+In addition to the knowledge acquired in the [Professional Academy Diploma in Full Stack Software Development](https://www.ucd.ie/professionalacademy/findyourcourse/professional_diploma_in_software_development/) by [University College Dublin](https://www.ucd.ie/) and [Code Institute](https://codeinstitute.net/ie/), I also used the following sources to deal with specific points of this project:
+
+- [Writing on Github](https://docs.github.com/en/get-started/writing-on-github)
+- [Bootstrap Documentation](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+- A Designer Who Codes
+    - [Bootstrap 5 HORIZONTAL Cards](https://www.youtube.com/watch?v=1x6M8dvUJgU)
+    - [Bootstrap 5 Navbar](https://www.youtube.com/watch?v=akXfF066MY0)
+- [StackOverflow](https://stackoverflow.com/) for fixing date formating on models and forms
+
+### Content
+
+- All the icons were taken from [Font Awesome](https://fontawesome.com/icons).
+- All the blog content was taken from the [GatesNotes](https://www.gatesnotes.com/)
+- All the books content were taken from [Amazon Books](https://www.amazon.co.uk/books-used-books-textbooks/b?ie=UTF8&node=266239)
 
 Back to [top](#table-of-contents)
 
 ### Acknowledgements
+
+- Thanks my mentor Brian Macharia for the guide and feedback throughout the project lifecycle.
+
+- This project was inspired by my own experience of building digital products for tech companies as a Product Manager / Product Owner for the previous 10 years.
+
+### Disclaimer
+The content of this Website is for educational purposes only.
 
 Back to [top](#table-of-contents)
